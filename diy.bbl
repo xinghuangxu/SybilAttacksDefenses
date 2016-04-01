@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{Karlof03securerouting}
+C.~Karlof and D.~Wagner, ``Secure routing in wireless sensor networks: Attacks
+  and countermeasures,'' 2003.
+
+\bibitem{Danezis05sybil-resistantdht}
+G.~Danezis, C.~Lesniewski-laas, M.~F. Kaashoek, and R.~Anderson,
+  ``Sybil-resistant dht routing,'' in {\em In ESORICS}, pp.~305--318, Springer,
+  2005.
+
+\bibitem{Tran09SOC}
+N.~Tran, B.~Min, J.~Li, and L.~Subramanian, ``Sybil-resilient online content
+  voting,'' in {\em Proceedings of the 6th USENIX Symposium on Networked
+  Systems Design and Implementation}, NSDI'09, (Berkeley, CA, USA), pp.~15--28,
+  USENIX Association, 2009.
+
+\bibitem{Swamynathan10reputation}
+G.~Swamynathan, K.~C. Almeroth, and B.~Y. Zhao, ``The design of a reliable
+  reputation system,'' vol.~10, pp.~239--270, Dec. 2010.
+
+\bibitem{Lian07anempirical}
+Q.~Lian, Z.~Zhang, M.~Yang, B.~Y. Zhao, Y.~Dai, and X.~Li, ``An empirical study
+  of collusion behavior in the maze p2p file-sharing system,'' in {\em In
+  ICDCS}, 2007.
+
+\bibitem{wolchok09defeatingvanish}
+S.~Wolchok, O.~S. Hofmann, N.~Heninger, E.~W. Felten, J.~A. Halderman, C.~J.
+  Rossbach, B.~Waters, and E.~Witchel, ``Defeating vanish with low-cost sybil
+  attacks against large dhts,'' 2009.
+
+\bibitem{newsome04sybil}
+J.~Newsome, E.~Shi, D.~Song, and A.~Perrig, ``The sybil attack in sensor
+  networks: analysis defenses,'' in {\em Information Processing in Sensor
+  Networks, 2004. IPSN 2004. Third International Symposium on}, pp.~259--268,
+  April 2004.
+
+\bibitem{Castro02Secure}
+M.~Castro, P.~Druschel, A.~Ganesh, A.~Rowstron, and D.~S. Wallach, ``Secure
+  routing for structured peer-to-peer overlay networks,'' {\em SIGOPS Oper.
+  Syst. Rev.}, vol.~36, pp.~299--314, Dec. 2002.
+
+\bibitem{Adya02FFA}
+A.~Adya, W.~J. Bolosky, M.~Castro, G.~Cermak, R.~Chaiken, J.~R. Douceur,
+  J.~Howell, J.~R. Lorch, M.~Theimer, and R.~P. Wattenhofer, ``Farsite:
+  Federated, available, and reliable storage for an incompletely trusted
+  environment,'' {\em SIGOPS Oper. Syst. Rev.}, vol.~36, pp.~1--14, Dec. 2002.
+
+\bibitem{Borisov06CPS}
+N.~Borisov, ``Computational puzzles as sybil defenses,'' in {\em Proceedings of
+  the Sixth IEEE International Conference on Peer-to-Peer Computing}, P2P '06,
+  (Washington, DC, USA), pp.~171--176, IEEE Computer Society, 2006.
+
+\bibitem{Ahn03CUH}
+L.~V. Ahn, M.~Blum, N.~J. Hopper, and J.~Langford, ``Captcha: Using hard ai
+  problems for security,'' in {\em Proceedings of the 22Nd International
+  Conference on Theory and Applications of Cryptographic Techniques},
+  EUROCRYPT'03, (Berlin, Heidelberg), pp.~294--311, Springer-Verlag, 2003.
+
+\bibitem{Zheng_thwartingsybil}
+C.~Zheng and D.~S. Gilbert, ``Thwarting sybil attacks and malicious disruption
+  in wireless networks,” http://www.comp.nus.edu.sg.''
+
+\bibitem{Demirbas06RSSI}
+M.~Demirbas and Y.~Song, ``An rssi-based scheme for sybil attack detection in
+  wireless sensor networks,'' in {\em World of Wireless, Mobile and Multimedia
+  Networks, 2006. WoWMoM 2006. International Symposium on a}, pp.~5 pp.--570,
+  2006.
+
+\bibitem{Yu08SybilGuard}
+H.~Yu, M.~Kaminsky, P.~B. Gibbons, and A.~D. Flaxman, ``Sybilguard: Defending
+  against sybil attacks via social networks,'' {\em IEEE/ACM Transactions on
+  Networking}, vol.~16, pp.~576--589, June 2008.
+
+\bibitem{Yu08SybilLimit}
+H.~Yu, P.~B. Gibbons, M.~Kaminsky, and F.~Xiao, ``Sybillimit: A near-optimal
+  social network defense against sybil attacks,'' in {\em Security and Privacy,
+  2008. SP 2008. IEEE Symposium on}, pp.~3--17, May 2008.
+
+\end{thebibliography}
