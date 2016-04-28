@@ -1,7 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  8 APR 2016 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  27 APR 2016 08:11
 entering extended mode
-**"C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/IEEEtran/diy.tex"
-("C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/IEEEtran/diy.tex"
+**"C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/survey/sybil_attack_l
+atex/xu16sybil.tex"
+
+("C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/survey/sybil_attack_la
+tex/xu16sybil.tex"
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9n> and hyphenation patterns for 69 languages loaded.
 (IEEEtran.cls
@@ -113,8 +116,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (diy.aux)
-\openout1 = `diy.aux'.
+) (xu16sybil.aux)
+\openout1 = `xu16sybil.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 315.
 LaTeX Font Info:    ... okay on input line 315.
@@ -155,7 +158,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 466.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 466.
- (diy.bbl
+ (xu16sybil.bbl
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
@@ -171,25 +174,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3] (diy.aux) ) 
+[3] (xu16sybil.aux) ) 
 Here is how much of TeX's memory you used:
  1064 strings out of 493634
- 19539 string characters out of 3134015
+ 19662 string characters out of 3134015
  82334 words of memory out of 3000000
  4515 multiletter control sequences out of 15000+200000
  34143 words of font info for 63 fonts, out of 3000000 for 9000
  1028 hyphenation exceptions out of 8191
- 26i,7n,19p,1085b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
-vips/fontname/8r.enc}<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/k586j642/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/k586j642/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/k586j642/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/k
-586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/
-Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on diy.pdf (3 pages, 87904 bytes).
+ 26i,7n,19p,1108b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts
+/enc/dvips/fontname/8r.enc}<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/k586j642/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/k586j642/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/k58
+6j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/U
+sers/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pf
+b><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on xu16sybil.pdf (3 pages, 87904 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
