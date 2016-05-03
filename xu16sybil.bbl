@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{sybil16wiki}
+Wikipedia, ``Sybil (book),'' 1973.
+\newblock [Online; accessed 02-May-2016].
+
 \bibitem{Karlof03securerouting}
 C.~Karlof and D.~Wagner, ``Secure routing in wireless sensor networks: Attacks
   and countermeasures,'' 2003.

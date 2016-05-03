@@ -369,8 +369,15 @@ Email: xxxu3@wichita.edu}}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-This  proposal presents sybil attacks under different context and categorized various sybil defense mechanisms. 
-We briefly describe the main idea behind each defense categories and outline what to expect in the final survey paper. 
+Sybil attack has been a thread to most peer to peer network systems. 
+If new identities can be created without control in a distributed system, the system is susceptible to Sybil attacks.
+For example in IMDB, sybil accounts can be created to boost the score of a new movie in order to attract potential audiences to watch the movie in theatres.
+The survey paper is a guideline for open distributed system designers who want to introduce defense mechanisms into their systems to protect against Sybil attacks.
+We first define various Sybil attacks under different domains with different goals then we presents three categories of defenses against Sybil attacks.
+The three categories include the traditional approach, the social network based approach and the domain specific approach.
+We also analyse the differences among the three categories and the advantage/disadvantage of methods within each category. 
+Readers will have a deeper understanding of how to protect their distributed systems against Sybil attacks after reading this survey.
+
 \end{abstract}
 
 % no keywords
@@ -392,17 +399,33 @@ We briefly describe the main idea behind each defense categories and outline wha
 
 \section{Introduction}
 % no \IEEEPARstart
+Sybil is book written by Flora Rheta Schreiber about the treatment of Sybil Dorsett for dissociative identity disorder. She is believed to have manifested sixteen different
+personalities according her doctor Cornelia B Wilbur.\cite{sybil16wiki}
 
+
+Distributed system has become more and more popular these days thanks to the growth of the Cloud. and many other distributed technologies like P2P, MapReduce and Hadoop. 
+Distributed Storage, Distributed Computing, Distributed Networking have bring us into
+a new era of sharing. 
+
+People can share their network bandwidth, local files, and extra computing powers in a P2P network. 
+Sharing is good but it comes with a price. The major thread to P2P system is Sybil attacks.
+Each node in a P2P system is in charge of local storage, computing, and networking.
+If attackers create sybil nodes that don't play by the rule of the system to benefit themselves, the whole sharing schema would not be able to sustain.
+The problem comes down to how can we prevent sybils from joining the system or how can we find bad players in a distributed system and kick them out?
+Sybil defenses are important to the development of peer-to-peer system. 
+
+Sybil attack has become a major thread to 
 Sybil attacks have always been a thread to distributed systems.
-In a Sybil attack, an adversary will try to generate as many identities/sybils as possible and act as if he/she is multiple nodes in a network graph in order to disrupt the proper functionality of the targeted system. 
-There are many different types of sybil attacks under different contexts with different goals. 
-The goal of an attacker launching a sybil attack might vary. For example, it can be to distupt a distributed netework, to influence a distributed recommender system, to gain an unfair amount of share resource or to gather valuable information.
-We will go in more detail of how sybil attacks can achieve the above goals. Apart from listing many different kinds of sybil attacks, defenses are also presented.
+Distributed systems can be modelled as large graphs.
+In a Sybil attack, an adversary will try to generate as many identities/sybils as possible and act as if he/she is multiple nodes in a graph in order to disrupt the proper functionality of the targeted system. 
+There are many different types of sybil. 
+The context and the goal of an attacker launching a sybil attack might vary. For example, it can be to disrupt a distributed network, to influence a distributed recommender system, to gain an unfair amount of share resource or to gather valuable information.
+We will describe the detail how sybil attacks can achieve the above malicious goals. Apart from listing many different kinds of sybil attacks, defenses are also presented.
 Traditionally, some people have classified sybil defenses based on whether the solution is centralized or distributed.
 Others have classified them based on their underlying technologies. In this paper, we propose an innovative classification approach. 
-A defense is first grouped as traditional sybil defense, domain specific defense or social network graph based defense, then it will be futher classified based on the underlying technologies used. The target audience of the final survey is people who are interested in Sybil attacks or who maintain a distributed system and want to deploy a Sybil attack defense mechanism in their system.
+A defense is first grouped as traditional sybil defense, domain specific defense or social network graph based defense, then it will be further classified based on the underlying technologies used. The target audience of this survey is people who are interested in Sybil attacks or who maintain a distributed system and want to deploy a Sybil attack defense mechanism in their system.
 
-In the following sections, we will list different sybil attacks and various denfenses. Afterward, future work for the final survey is outlined.
+In the following sections, we will list different sybil attacks and various denfenses. Afterwards, future work for the final survey is outlined.
 
 \section{Sybil Attacks}
 % no \IEEEPARstart
