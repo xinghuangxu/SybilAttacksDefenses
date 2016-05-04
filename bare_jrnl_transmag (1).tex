@@ -1,15 +1,14 @@
 
-%% bare_conf.tex
+%% bare_jrnl_transmag.tex
 %% V1.4b
 %% 2015/08/26
 %% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
+%% see http://www.michaelshell.org/
 %% for current contact information.
 %%
 %% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% conference paper.
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE 
+%% Transactions on Magnetics journal paper.
 %%
 %% Support sites:
 %% http://www.michaelshell.org/tex/ieeetran/
@@ -51,13 +50,11 @@
 
 
 
-\documentclass[conference]{IEEEtran}
-% Some Computer Society conferences also require the compsoc mode option,
-% but others use the standard conference format.
+\documentclass[journal,transmag]{IEEEtran}
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
+% \documentclass[journal]{../sty/IEEEtran}
 
 
 
@@ -156,7 +153,6 @@
 
 
 
-
 % *** MATH PACKAGES ***
 %
 %\usepackage{amsmath}
@@ -241,7 +237,6 @@
 
 
 
-
 % *** FLOAT PACKAGES ***
 %
 %\usepackage{fixltx2e}
@@ -289,6 +284,47 @@
 
 
 
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 %
 %\usepackage{url}
@@ -320,40 +356,47 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{A Survey on Sybil Attacks and Defenses}
+\title{Bare Demo of IEEEtran.cls for\\ IEEE \textsc{Transactions on Magnetics}}
+
 
 
 % author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
-\author{\IEEEauthorblockN{Xinghuang Xu}
-\IEEEauthorblockA{EECS Department\\
-Wichita State University\\
-Email: xxxu3@wichita.edu}}
+% transmag papers use the long conference author name format.
+
+\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+Homer Simpson\IEEEauthorrefmark{2},
+James Kirk\IEEEauthorrefmark{3}, 
+Montgomery Scott\IEEEauthorrefmark{3}, and
+Eldon Tyrell\IEEEauthorrefmark{4},~\IEEEmembership{Fellow,~IEEE}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering,
+Georgia Institute of Technology, Atlanta, GA 30332 USA}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA}
+\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, CA 96678 USA}
+\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, CA 90210 USA}% <-this % stops an unwanted space
+\thanks{Manuscript received December 1, 2012; revised August 26, 2015. 
+Corresponding author: M. Shell (email: http://www.michaelshell.org/contact.html).}}
 
 
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
 
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
+% The paper headers
+\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Transactions on Magnetics Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
 % 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
 
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
 
 
 
@@ -361,26 +404,41 @@ Email: xxxu3@wichita.edu}}
 %\IEEEspecialpapernotice{(Invited Paper)}
 
 
+% for Transactions on Magnetics papers, we must declare the abstract and
+% index terms PRIOR to the title within the \IEEEtitleabstractindextext
+% IEEEtran command as these need to go into the title area created by
+% \maketitle.
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+The abstract goes here.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+IEEE, IEEEtran, IEEE Transactions on Magnetics, journal, \LaTeX, magnetics, paper, template.
+\end{IEEEkeywords}}
+
 
 
 % make the title area
 \maketitle
 
-% As a general rule, do not put math, special symbols or citations
-% in the abstract
-\begin{abstract}
-Sybil attack has been a thread to most peer to peer network systems. 
-If new identities can be created without control in a distributed system, the system is susceptible to Sybil attacks.
-For example in IMDB, sybil accounts can be created to boost the score of a new movie in order to attract potential audiences to watch the movie in theatres.
-The survey paper is a guideline for open distributed system designers who want to introduce defense mechanisms into their systems to protect against Sybil attacks.
-We first define various Sybil attacks under different domains with different goals then we presents three categories of defenses against Sybil attacks.
-The three categories include the traditional approach, the social network based approach and the domain specific approach.
-We also analyse the differences among the three categories and the advantage/disadvantage of methods within each category. 
-Readers will have a deeper understanding of how to protect their distributed systems against Sybil attacks after reading this survey.
 
-\end{abstract}
+% To allow for easy dual compilation without having to reenter the
+% abstract/keywords data, the \IEEEtitleabstractindextext text will
+% not be used in maketitle, but will appear (i.e., to be "transported")
+% here as \IEEEdisplaynontitleabstractindextext when the compsoc 
+% or transmag modes are not selected <OR> if conference mode is selected 
+% - because all conference papers position the abstract like regular
+% papers do.
+\IEEEdisplaynontitleabstractindextext
+% \IEEEdisplaynontitleabstractindextext has no effect when using
+% compsoc or transmag under a non-conference mode.
 
-% no keywords
+
+
 
 
 
@@ -398,105 +456,41 @@ Readers will have a deeper understanding of how to protect their distributed sys
 
 
 \section{Introduction}
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps.
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by the IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
+for IEEE \textsc{Transactions on Magnetics} journal papers produced under \LaTeX\ using
+IEEEtran.cls version 1.8b and later.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+I wish you the best of success.
 
-Sybil is book written by Flora Rheta Schreiber about the treatment of Sybil Dorsett for dissociative identity disorder. She is believed to have manifested sixteen different
-personalities according her doctor Cornelia B Wilbur.\cite{sybil16wiki}
+\hfill mds
+ 
+\hfill August 26, 2015
 
-This survey is about a specific system security attack name Sybil Attack. Sybil attack takes place when an adversary in a system acts as if he is multiple users
-with different identities in order to disrupt the proper functionality of the underlying system and benefit himself. Sybil attack has proven to be harmful in many systems. 
-For example, in a book recommender system.
-The popularity of a book depends on the number of people who have liked it. In such a system, the goal is to find books that is likely to be of interest to users based on others'
-recommendations. An attacker can create many fake accounts and out vote legitimate users on the books he/she wants to promote or demote. The success of the attack is almost guaranteed given
-the fact that most legitimate users are too lazy to vote in a recommender system. 
-There are many other domains that are vulnerable to Sybil attacks. It's impossible to enumerate all the domains susceptible to Sybil attack in 
-this survey, so we have selected some typical domains that are well studied in section \ref{SybilAttacks}. If your domain is not listed in \ref{SybilAttacks}, 
-that doesn't mean your domain is free from Sybil attacks. You should ask yourself if it's possible to create fake identities in your system, if your answer is yes then you should
-keep an eye open for Sybil attacks.
+\subsection{Subsection Heading Here}
+Subsection text here.
 
-The following is a roadmap of the rest of the paper.
-In section \ref{SybilAttacks}, we define some common properties of sybil and a list of some major domains that are susceptible to Sybil attacks are provided.
-We define the goal of the defense and three main types of defense mechanisms in section \ref{SybilDefense}. 
-The three categories of Sybil defenses are traditional defense, social
-network based defense and domain specific defense. We provide descriptions on how the defense works and point our their advantage/disadvantage
-in terms of their efficiency, false positive/negative rate, deploy-ability and more. In the last section \ref{Conclusion}, we would conclude this survey.
-After reading this survey you will have a deeper understanding of Sybil attacks and should be equipped with many techniques to defense against Sybil attacks.
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
 
+\subsubsection{Subsubsection Heading Here}
+Subsubsection text here.
 
-
-
-\section{Sybil Attacks} \label{SybilAttacks}
-% no \IEEEPARstart
-
-\subsection{Routing}
-In a distributed system, routing required the participation of many nodes. For example, when node A wants to look up node D, it will ask its neighbors and its neighbors would go ask their neighbors and on and on until someone has the knowledge of D and pass D’s location all the way back to A through a path. An attacker can inject many malicious nodes inside and network to disrupt the routing. In a sybil infected network, when A ask about D’s location, if the lookup path pass a malicious node, the malicious node can return a false address or can do nothing. Either way, the process of lookup will be slow down greatly. With sufficient proportions of sybil nodes, attackers can block communications among nodes altogether and render the system useless.
-
-There are concrete real world examples of Sybil attacks on routing protocols.
-Geogaphical routing protocol is vulnerable to Sybil attacks because it requires nodes to exchange coordinate data with their neighbors to efficiently address packets. By using the Sybil attack, an attacker can create multiple identities in different geographical locations thus making him available in multiple places at once which violates the fundamental assumption of the routing protocol\cite{Karlof03securerouting}. Sybil attack pose a thread to the seemingly robust multipath routing protocol too.\cite{Karlof03securerouting}
-
-The popular Distributed Hash Tables (DHT) which underlies many peer-to-peer systems are also known to be vulnerable to Sybil attack. In DHT that are opened to the rest of the world like Vuze DHT, an adversary can introduce a large number of corrupt nodes in the network to degrade of the performance of the targeted DHT.\cite{Danezis05sybil-resistantdht} 
-
-\subsection{Content Rating System}
-Sybil attack is a fundamental thread to any user-based content rating system such as Goodreads, Youtube and IMDB. There are hugh incentives in this kind of attacks because attackers can promote low-quality content to a wide audience. For example, it has been studied that many people check the IMDB score before going to see the movie in theater. A high IMDB score will attrack more audiences to go to the theater thus making the movie more profitable. This is not hypertheticcal. There are successful real world cases. For example, the famous Slashdot poll on the best compute science school has caused students to write automatic scripts to vote for their schools repeatedly. Moreover, some underground companies made money through assisting clients in promoting their Youtube video's view counts by using a large number of Sybil accounts.\cite{Tran09SOC}
-
-\subsection{Reputation System}
-Sybil attack post a significant challenge for building repuations systems. In a repuation system, an adversary can create a large number of identities and maliciously increase the reputation of one or more master identities by giving false recommendations to them. Sybils can also promote their own reputations and falsely accuse well-behaved players in the system to hurt their reputation. For example, in eBay.com repuation is calculated as the sum of (+1,0.-1) of all the trasaction ratings no matter how big the transaction is. Sybils can be create to make small transactions with a seller and automattically give them good reviews to boost their reputation. Afterward, the seller can use that repuation on a dishonest transaction of high value. By using Sybil attack, a dishonest seller can hide the fact he frequently misbehaves at a certain rate.
-
-Moreover, in networks that use repuation scheme to find misbehaving nodes/sybils, nodes with good reputation can report nodes they believe to be misbehaving in its neighbors. But this scheme can backfire.  For example, users can collude to artificially boost the reputation values of one or more friends, or falsely accuse well-behaved users of misbehavior. when adversaries control enough nodes and decide to repeatedly report honest nodes. The outcome is that most of the honest nodes will be considered malicious and be removed from the networks, the malicious nodes afterward will take full control of the whole system and use it for their their own benefits. Detecting such collusion attacks is yet an unsolved problem that severely limits the impact of existing reputation systems.\cite{Swamynathan10reputation}\cite{Lian07anempirical}
-
-
-\subsection{Other Contexts}
-There are many other forms of Sybil Attacks. It can be used to steal more share resrouces.
-In a distributed system, people are sharing their resources such as bandwidth, memory and data. An adversary can create sybils to claim an unfair and disproportionate share of the resources. 
-
-Also in distributed storage, sybils can cause data lost by being selfish and not storing the fragment of data that are asked to store. Sybils can be used to degrade the performance of the distributed file system by not responding to file request or provide the wrong file segment. What's more, because some file systems replicate data to neighbor nodes, sybils can be used to crawl the entire file system through frequently hopping into different areas in the network.\cite{Lian07anempirical}\cite{wolchok09defeatingvanish}
-
-
-\section{Sybil Defense} \label{SybilDefense}
-% no \IEEEPARstart
-The problem of defending against sybil attacks has been thoroughly study but there are no good known method that could completely eliminate the problem. Some of the centralized solution claim to be able to eliminate Sybil attacks at the price of adding authentication overhead to the system or sacrifising the open nature of distributed system. Most of the approaches study in our survey are seeking to reduce the effect of Sybil attacks in their systems instead of eliminating them. There is always a trade of between efficiency, security and system compelxity in all the approaches. In this section, we first classify the defense based on its timeline and then on the underlying technique they use. We include a short description for each teachnique which will be extended in the final paper.
-
-\subsection{Traditional Appraoch}
-
-\subsubsection{Trusted Certification}
-This is the most popular solution for countering Sybil attacks, it required a trusted certifying authority that validates the identity of a node before it joins the system. There are two variations in this approach. One is the centralized version, the other is the semi-centralized version. In the centralized version, it is assumped that there is a trusted central authority who can verify the validity of each participant. After the validation, a certificate will be given to each participant. The participant then can use the certificate to access the system. The model is very popular and has been used widely. Most authentication services use this kind of model. The semi-centralized approach seek to cut of the cost of asymmetric criptography used in the centralized version. It leverage a techniqe called partical identity verifications. The approach still need to rely on a trusted base station but reduce the involvement of a third party authority.
-
-The problem of  trusted certification approach is that it rely on a centralized trusted authority for credential generation, assignment and verification. However, it sacrifice the open nature that underlies the success of these distributed systems and increase the overhead of the system. \cite{newsome04sybil}\cite{Castro02Secure}\cite{Adya02FFA}.
-
-\subsubsection{Resource Testing}
-Resource Testing is another line of solution. The idea behind resource testing is that each identity should own a fair amount of resource because it runs on a legitimate cilent otherwise there is a high potential that this is a sybil node. The question is how can we test that there are resource backing up a node? Some propose the testing of IP address because multiple identities sharing a single IP address is a good sign of Sybil attacks. Others test resources such as computing power, network bandwidth. A variation of the resource testing method is called “Recurring Costs”. For example, in one solution participants are required to perform some tasks such as solving puzzles\cite{Borisov06CPS} periodically. Turing tests are also suggested as a recurring cost solution\cite{Ahn03CUH}. With Recurring Costs, the cost of Sybil attacks have become more expensive but would the benefit still outweight the cost? Cloud services have definitely help drive down the cost of Sybil attacks.
-
-\subsection{Domain Specific Approaches}
-\subsubsection{Ad hoc Networks}
-
-In wireless ad hoc networks, a group of sybils are usually sharing the same device and they can be detected through monitoring signals’ features or the moving patterns of coexisting identities. SybilCast is a novoel protocol proposed in \cite{Zheng_thwartingsybil} that can limit the number of 
-fake identities in centralized multichannel wireless networks. SybilCast can ensure that each honest user gets at least a constant fraction of their fair share of the bandwidth and complete his or her data download in asymptotically optimal time.
-
-\subsubsection{Wireless Sensor Netowrk}
-In wireless sensor netowrk, Demirbas et al. proposed an sybil attack counter measurement by using received signal strength indicator (RSSI). The algorithm proposed in \cite{Demirbas06RSSI} claims to be light weight because it only require the colloboration of one other node apart from the receiver and accurate because it detects sybil attack cases with 100\% completeness and only a few percent false positives.
-\cite{Demirbas06RSSI}
-
-\subsection{Social Network-Based}
-Yu et al. has started a new era of sybil defense when he proposed the idea of detecting sybils using a unique structure in the social network graph. Even though attackers can inject many sybils into a social graph, the connections between honest users and sybils are limited\cite{Yu08SybilGuard}. For example, honest users on facebook would not randomly accept friends if they do not know the person. Suprisingly, the social network appraoch has showed to be able to overcome some of the earlier approaches limitations and shortcomings.
-
-\subsubsection{SybilGuard}
-SybilGuard designed by Yu et al. \cite{Yu08SybilGuard} is one of the first Sybil defense techniques based on Social Network. The approach assumes that each edge in the graph between two identities indicates a human-established trust relationship and malicious users can only create limited edges between honest users. SybilGuard bounds the number of malicious sybils a user can create by exploiting the property that there exist a disproportionaltely small "cut" in the 
-graph between the sybil nodes and the honest nodes.
-
-\subsubsection{SybilLimit}
-The approach take by SybilLimit in \cite{Yu08SybilLimit} is the same as SybilGuard but SybilGuard can dramatically reduce the number of sybil nodes accepted by a factor of  $ \sqrt{n} $.
-
-\subsubsection{SybilInfer}
-SybilInfer takes the approach of labelling nodes in a social network as honest users or Sybils. Internally, it uses a probabilistic model of honest social networks as its knowledge base and an inference engine to obtain the potential regions of dishonest nodes.
-It claims to be more accurate and more applicable when compare to both SybilGuard and SybilLimit.
-
-
-\section{Project Deliverable}
-% no \IEEEPARstart
-We have listed potential threads of Sybil attacks under different context and showed different types of counter measurements. 
-We want the final paper to serve as introduction and guidline for sybil attacks and defenses.
-To obtain this goal, we would like to present more detail explaintion of each Sybil defense approaches in the final survey. Furthermore, a comphrehensive comparison among the different defense mechanisms will be included.
-If time permits, we would also look into evaluating some of the defense mechanisms by using metrics like false negative/positive rate, the time and code complexity the soution would add to the existing system.
-Also we would like to point out potential directions/opportunities in the research of sybil attacks/defenses in the final survey paper.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -593,6 +587,55 @@ Also we would like to point out potential directions/opportunities in the resear
 % \fnbelowfloat command of the stfloats package.
 
 
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Proof of the First Zonklar Equation}
+Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+\section{}
+Appendix two text goes here.
+
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
 % adjust value as needed - may need to be readjusted if
@@ -615,9 +658,54 @@ Also we would like to point out potential directions/opportunities in the resear
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
 
-\bibliography{diy} 
-\bibliographystyle{ieeetr}
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+\begin{IEEEbiography}{Michael Shell}
+Biography text here.
+\end{IEEEbiography}
+
+% if you will not have a photo at all:
+\begin{IEEEbiographynophoto}{John Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+\begin{IEEEbiographynophoto}{Jane Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
 
 
 % that's all folks

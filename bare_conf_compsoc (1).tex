@@ -1,5 +1,5 @@
 
-%% bare_conf.tex
+%% bare_conf_compsoc.tex
 %% V1.4b
 %% 2015/08/26
 %% by Michael Shell
@@ -8,8 +8,8 @@
 %% for current contact information.
 %%
 %% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% conference paper.
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE Computer
+%% Society conference paper.
 %%
 %% Support sites:
 %% http://www.michaelshell.org/tex/ieeetran/
@@ -51,13 +51,13 @@
 
 
 
-\documentclass[conference]{IEEEtran}
-% Some Computer Society conferences also require the compsoc mode option,
-% but others use the standard conference format.
+\documentclass[conference,compsoc]{IEEEtran}
+% Some/most Computer Society conferences require the compsoc mode option,
+% but others may want the standard conference format.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
+% \documentclass[conference,compsoc]{../sty/IEEEtran}
 
 
 
@@ -92,7 +92,14 @@
 
 % *** CITATION PACKAGES ***
 %
-%\usepackage{cite}
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
 % cite.sty was written by Donald Arseneau
 % V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
 % \cite{} output to follow that of the IEEE. Loading the cite package will
@@ -107,7 +114,14 @@
 % The latest version can be obtained at:
 % http://www.ctan.org/pkg/cite
 % The documentation is contained in the cite.sty file itself.
-
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later.
 
 
 
@@ -218,7 +232,7 @@
 
 % *** SUBFIGURE PACKAGES ***
 %\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
 %\else
 %  \usepackage[caption=false,font=footnotesize]{subfig}
 %\fi
@@ -231,10 +245,10 @@
 % and invoke subfig.sty's "caption=false" package option (available since
 % subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
 % handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
 %
 % The latest version and documentation of subfig.sty can be obtained at:
 % http://www.ctan.org/pkg/subfig
@@ -320,17 +334,28 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{A Survey on Sybil Attacks and Defenses}
+\title{Bare Demo of IEEEtran.cls for\\ IEEE Computer Society Conferences}
 
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Xinghuang Xu}
-\IEEEauthorblockA{EECS Department\\
-Wichita State University\\
-Email: xxxu3@wichita.edu}}
-
+\author{\IEEEauthorblockN{Michael Shell}
+\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+Georgia Institute of Technology\\
+Atlanta, Georgia 30332--0250\\
+Email: http://www.michaelshell.org/contact.html}
+\and
+\IEEEauthorblockN{Homer Simpson}
+\IEEEauthorblockA{Twentieth Century Fox\\
+Springfield, USA\\
+Email: homer@thesimpsons.com}
+\and
+\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+\IEEEauthorblockA{Starfleet Academy\\
+San Francisco, California 96678-2391\\
+Telephone: (800) 555--1212\\
+Fax: (888) 555--1212}}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -338,7 +363,9 @@ Email: xxxu3@wichita.edu}}
 % after \documentclass
 
 % for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
+% of the page (and note that there is less available width in this regard for
+% compsoc conferences compared to traditional conferences), use this
+% alternative format:
 % 
 %\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
 %Homer Simpson\IEEEauthorrefmark{2},
@@ -369,15 +396,7 @@ Email: xxxu3@wichita.edu}}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Sybil attack has been a thread to most peer to peer network systems. 
-If new identities can be created without control in a distributed system, the system is susceptible to Sybil attacks.
-For example in IMDB, sybil accounts can be created to boost the score of a new movie in order to attract potential audiences to watch the movie in theatres.
-The survey paper is a guideline for open distributed system designers who want to introduce defense mechanisms into their systems to protect against Sybil attacks.
-We first define various Sybil attacks under different domains with different goals then we presents three categories of defenses against Sybil attacks.
-The three categories include the traditional approach, the social network based approach and the domain specific approach.
-We also analyse the differences among the three categories and the advantage/disadvantage of methods within each category. 
-Readers will have a deeper understanding of how to protect their distributed systems against Sybil attacks after reading this survey.
-
+The abstract goes here.
 \end{abstract}
 
 % no keywords
@@ -398,105 +417,25 @@ Readers will have a deeper understanding of how to protect their distributed sys
 
 
 \section{Introduction}
-
-Sybil is book written by Flora Rheta Schreiber about the treatment of Sybil Dorsett for dissociative identity disorder. She is believed to have manifested sixteen different
-personalities according her doctor Cornelia B Wilbur.\cite{sybil16wiki}
-
-This survey is about a specific system security attack name Sybil Attack. Sybil attack takes place when an adversary in a system acts as if he is multiple users
-with different identities in order to disrupt the proper functionality of the underlying system and benefit himself. Sybil attack has proven to be harmful in many systems. 
-For example, in a book recommender system.
-The popularity of a book depends on the number of people who have liked it. In such a system, the goal is to find books that is likely to be of interest to users based on others'
-recommendations. An attacker can create many fake accounts and out vote legitimate users on the books he/she wants to promote or demote. The success of the attack is almost guaranteed given
-the fact that most legitimate users are too lazy to vote in a recommender system. 
-There are many other domains that are vulnerable to Sybil attacks. It's impossible to enumerate all the domains susceptible to Sybil attack in 
-this survey, so we have selected some typical domains that are well studied in section \ref{SybilAttacks}. If your domain is not listed in \ref{SybilAttacks}, 
-that doesn't mean your domain is free from Sybil attacks. You should ask yourself if it's possible to create fake identities in your system, if your answer is yes then you should
-keep an eye open for Sybil attacks.
-
-The following is a roadmap of the rest of the paper.
-In section \ref{SybilAttacks}, we define some common properties of sybil and a list of some major domains that are susceptible to Sybil attacks are provided.
-We define the goal of the defense and three main types of defense mechanisms in section \ref{SybilDefense}. 
-The three categories of Sybil defenses are traditional defense, social
-network based defense and domain specific defense. We provide descriptions on how the defense works and point our their advantage/disadvantage
-in terms of their efficiency, false positive/negative rate, deploy-ability and more. In the last section \ref{Conclusion}, we would conclude this survey.
-After reading this survey you will have a deeper understanding of Sybil attacks and should be equipped with many techniques to defense against Sybil attacks.
-
-
-
-
-\section{Sybil Attacks} \label{SybilAttacks}
 % no \IEEEPARstart
+This demo file is intended to serve as a ``starter file''
+for IEEE Computer Society conference papers produced under \LaTeX\ using
+IEEEtran.cls version 1.8b and later.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+I wish you the best of success.
 
-\subsection{Routing}
-In a distributed system, routing required the participation of many nodes. For example, when node A wants to look up node D, it will ask its neighbors and its neighbors would go ask their neighbors and on and on until someone has the knowledge of D and pass D’s location all the way back to A through a path. An attacker can inject many malicious nodes inside and network to disrupt the routing. In a sybil infected network, when A ask about D’s location, if the lookup path pass a malicious node, the malicious node can return a false address or can do nothing. Either way, the process of lookup will be slow down greatly. With sufficient proportions of sybil nodes, attackers can block communications among nodes altogether and render the system useless.
+\hfill mds
+ 
+\hfill August 26, 2015
 
-There are concrete real world examples of Sybil attacks on routing protocols.
-Geogaphical routing protocol is vulnerable to Sybil attacks because it requires nodes to exchange coordinate data with their neighbors to efficiently address packets. By using the Sybil attack, an attacker can create multiple identities in different geographical locations thus making him available in multiple places at once which violates the fundamental assumption of the routing protocol\cite{Karlof03securerouting}. Sybil attack pose a thread to the seemingly robust multipath routing protocol too.\cite{Karlof03securerouting}
-
-The popular Distributed Hash Tables (DHT) which underlies many peer-to-peer systems are also known to be vulnerable to Sybil attack. In DHT that are opened to the rest of the world like Vuze DHT, an adversary can introduce a large number of corrupt nodes in the network to degrade of the performance of the targeted DHT.\cite{Danezis05sybil-resistantdht} 
-
-\subsection{Content Rating System}
-Sybil attack is a fundamental thread to any user-based content rating system such as Goodreads, Youtube and IMDB. There are hugh incentives in this kind of attacks because attackers can promote low-quality content to a wide audience. For example, it has been studied that many people check the IMDB score before going to see the movie in theater. A high IMDB score will attrack more audiences to go to the theater thus making the movie more profitable. This is not hypertheticcal. There are successful real world cases. For example, the famous Slashdot poll on the best compute science school has caused students to write automatic scripts to vote for their schools repeatedly. Moreover, some underground companies made money through assisting clients in promoting their Youtube video's view counts by using a large number of Sybil accounts.\cite{Tran09SOC}
-
-\subsection{Reputation System}
-Sybil attack post a significant challenge for building repuations systems. In a repuation system, an adversary can create a large number of identities and maliciously increase the reputation of one or more master identities by giving false recommendations to them. Sybils can also promote their own reputations and falsely accuse well-behaved players in the system to hurt their reputation. For example, in eBay.com repuation is calculated as the sum of (+1,0.-1) of all the trasaction ratings no matter how big the transaction is. Sybils can be create to make small transactions with a seller and automattically give them good reviews to boost their reputation. Afterward, the seller can use that repuation on a dishonest transaction of high value. By using Sybil attack, a dishonest seller can hide the fact he frequently misbehaves at a certain rate.
-
-Moreover, in networks that use repuation scheme to find misbehaving nodes/sybils, nodes with good reputation can report nodes they believe to be misbehaving in its neighbors. But this scheme can backfire.  For example, users can collude to artificially boost the reputation values of one or more friends, or falsely accuse well-behaved users of misbehavior. when adversaries control enough nodes and decide to repeatedly report honest nodes. The outcome is that most of the honest nodes will be considered malicious and be removed from the networks, the malicious nodes afterward will take full control of the whole system and use it for their their own benefits. Detecting such collusion attacks is yet an unsolved problem that severely limits the impact of existing reputation systems.\cite{Swamynathan10reputation}\cite{Lian07anempirical}
+\subsection{Subsection Heading Here}
+Subsection text here.
 
 
-\subsection{Other Contexts}
-There are many other forms of Sybil Attacks. It can be used to steal more share resrouces.
-In a distributed system, people are sharing their resources such as bandwidth, memory and data. An adversary can create sybils to claim an unfair and disproportionate share of the resources. 
+\subsubsection{Subsubsection Heading Here}
+Subsubsection text here.
 
-Also in distributed storage, sybils can cause data lost by being selfish and not storing the fragment of data that are asked to store. Sybils can be used to degrade the performance of the distributed file system by not responding to file request or provide the wrong file segment. What's more, because some file systems replicate data to neighbor nodes, sybils can be used to crawl the entire file system through frequently hopping into different areas in the network.\cite{Lian07anempirical}\cite{wolchok09defeatingvanish}
-
-
-\section{Sybil Defense} \label{SybilDefense}
-% no \IEEEPARstart
-The problem of defending against sybil attacks has been thoroughly study but there are no good known method that could completely eliminate the problem. Some of the centralized solution claim to be able to eliminate Sybil attacks at the price of adding authentication overhead to the system or sacrifising the open nature of distributed system. Most of the approaches study in our survey are seeking to reduce the effect of Sybil attacks in their systems instead of eliminating them. There is always a trade of between efficiency, security and system compelxity in all the approaches. In this section, we first classify the defense based on its timeline and then on the underlying technique they use. We include a short description for each teachnique which will be extended in the final paper.
-
-\subsection{Traditional Appraoch}
-
-\subsubsection{Trusted Certification}
-This is the most popular solution for countering Sybil attacks, it required a trusted certifying authority that validates the identity of a node before it joins the system. There are two variations in this approach. One is the centralized version, the other is the semi-centralized version. In the centralized version, it is assumped that there is a trusted central authority who can verify the validity of each participant. After the validation, a certificate will be given to each participant. The participant then can use the certificate to access the system. The model is very popular and has been used widely. Most authentication services use this kind of model. The semi-centralized approach seek to cut of the cost of asymmetric criptography used in the centralized version. It leverage a techniqe called partical identity verifications. The approach still need to rely on a trusted base station but reduce the involvement of a third party authority.
-
-The problem of  trusted certification approach is that it rely on a centralized trusted authority for credential generation, assignment and verification. However, it sacrifice the open nature that underlies the success of these distributed systems and increase the overhead of the system. \cite{newsome04sybil}\cite{Castro02Secure}\cite{Adya02FFA}.
-
-\subsubsection{Resource Testing}
-Resource Testing is another line of solution. The idea behind resource testing is that each identity should own a fair amount of resource because it runs on a legitimate cilent otherwise there is a high potential that this is a sybil node. The question is how can we test that there are resource backing up a node? Some propose the testing of IP address because multiple identities sharing a single IP address is a good sign of Sybil attacks. Others test resources such as computing power, network bandwidth. A variation of the resource testing method is called “Recurring Costs”. For example, in one solution participants are required to perform some tasks such as solving puzzles\cite{Borisov06CPS} periodically. Turing tests are also suggested as a recurring cost solution\cite{Ahn03CUH}. With Recurring Costs, the cost of Sybil attacks have become more expensive but would the benefit still outweight the cost? Cloud services have definitely help drive down the cost of Sybil attacks.
-
-\subsection{Domain Specific Approaches}
-\subsubsection{Ad hoc Networks}
-
-In wireless ad hoc networks, a group of sybils are usually sharing the same device and they can be detected through monitoring signals’ features or the moving patterns of coexisting identities. SybilCast is a novoel protocol proposed in \cite{Zheng_thwartingsybil} that can limit the number of 
-fake identities in centralized multichannel wireless networks. SybilCast can ensure that each honest user gets at least a constant fraction of their fair share of the bandwidth and complete his or her data download in asymptotically optimal time.
-
-\subsubsection{Wireless Sensor Netowrk}
-In wireless sensor netowrk, Demirbas et al. proposed an sybil attack counter measurement by using received signal strength indicator (RSSI). The algorithm proposed in \cite{Demirbas06RSSI} claims to be light weight because it only require the colloboration of one other node apart from the receiver and accurate because it detects sybil attack cases with 100\% completeness and only a few percent false positives.
-\cite{Demirbas06RSSI}
-
-\subsection{Social Network-Based}
-Yu et al. has started a new era of sybil defense when he proposed the idea of detecting sybils using a unique structure in the social network graph. Even though attackers can inject many sybils into a social graph, the connections between honest users and sybils are limited\cite{Yu08SybilGuard}. For example, honest users on facebook would not randomly accept friends if they do not know the person. Suprisingly, the social network appraoch has showed to be able to overcome some of the earlier approaches limitations and shortcomings.
-
-\subsubsection{SybilGuard}
-SybilGuard designed by Yu et al. \cite{Yu08SybilGuard} is one of the first Sybil defense techniques based on Social Network. The approach assumes that each edge in the graph between two identities indicates a human-established trust relationship and malicious users can only create limited edges between honest users. SybilGuard bounds the number of malicious sybils a user can create by exploiting the property that there exist a disproportionaltely small "cut" in the 
-graph between the sybil nodes and the honest nodes.
-
-\subsubsection{SybilLimit}
-The approach take by SybilLimit in \cite{Yu08SybilLimit} is the same as SybilGuard but SybilGuard can dramatically reduce the number of sybil nodes accepted by a factor of  $ \sqrt{n} $.
-
-\subsubsection{SybilInfer}
-SybilInfer takes the approach of labelling nodes in a social network as honest users or Sybils. Internally, it uses a probabilistic model of honest social networks as its knowledge base and an inference engine to obtain the potential regions of dishonest nodes.
-It claims to be more accurate and more applicable when compare to both SybilGuard and SybilLimit.
-
-
-\section{Project Deliverable}
-% no \IEEEPARstart
-We have listed potential threads of Sybil attacks under different context and showed different types of counter measurements. 
-We want the final paper to serve as introduction and guidline for sybil attacks and defenses.
-To obtain this goal, we would like to present more detail explaintion of each Sybil defense approaches in the final survey. Furthermore, a comphrehensive comparison among the different defense mechanisms will be included.
-If time permits, we would also look into evaluating some of the defense mechanisms by using metrics like false negative/positive rate, the time and code complexity the soution would add to the existing system.
-Also we would like to point out potential directions/opportunities in the research of sybil attacks/defenses in the final survey paper.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -593,6 +532,34 @@ Also we would like to point out potential directions/opportunities in the resear
 % \fnbelowfloat command of the stfloats package.
 
 
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+
+% use section* for acknowledgment
+\ifCLASSOPTIONcompsoc
+  % The Computer Society usually uses the plural form
+  \section*{Acknowledgments}
+\else
+  % regular IEEE prefers the singular form
+  \section*{Acknowledgment}
+\fi
+
+
+The authors would like to thank...
+
+
+
+
+
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
 % adjust value as needed - may need to be readjusted if
@@ -615,9 +582,15 @@ Also we would like to point out potential directions/opportunities in the resear
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
 
-\bibliography{diy} 
-\bibliographystyle{ieeetr}
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+
 
 
 % that's all folks
