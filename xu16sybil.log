@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  4 MAY 2016 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  4 MAY 2016 19:16
 entering extended mode
 **"C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/survey/sybil_attack_l
 atex/xu16sybil.tex"
@@ -133,17 +133,19 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 315.
 LaTeX Font Info:    ... okay on input line 315.
 
 -- Lines per column: 56 (exact).
+
+LaTeX Warning: Reference `Conclusion' on page 1 undefined on input line 421.
+
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
 [1{C:/Users/k586j642/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-
 [2]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -155,9 +157,9 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 510.
+(Font)              <7> on input line 501.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 510.
+(Font)              <5> on input line 501.
  (xu16sybil.bbl [3]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -176,25 +178,28 @@ Before submitting the final camera ready copy, remember to:
 
 [4
 
-] (xu16sybil.aux) ) 
+] (xu16sybil.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1067 strings out of 493634
- 19703 string characters out of 3134015
- 81334 words of memory out of 3000000
- 4518 multiletter control sequences out of 15000+200000
- 34143 words of font info for 63 fonts, out of 3000000 for 9000
+ 1069 strings out of 493634
+ 19721 string characters out of 3134015
+ 82334 words of memory out of 3000000
+ 4519 multiletter control sequences out of 15000+200000
+ 35250 words of font info for 64 fonts, out of 3000000 for 9000
  1028 hyphenation exceptions out of 8191
  26i,7n,19p,1108b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/fontname/8r.enc}<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/k586j642/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/k586j642/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/k586j
-642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Use
-rs/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on xu16sybil.pdf (4 pages, 93307 bytes).
+{C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname
+/8r.enc}<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/k586j642/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/k586j642/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/k586j642/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/k586j64
+2/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on xu16sybil.pdf (4 pages, 93159 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

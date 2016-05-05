@@ -426,26 +426,42 @@ After reading this survey you will have a deeper understanding of Sybil attacks 
 
 \section{Sybil Attacks} \label{SybilAttacks}
 % no \IEEEPARstart
+\subsection{Attack Model}
+The context of the attack can be vastly different. Sybil attacks can take place in vastly different domains such as Wireless Sensor Network, Online Social Network, 
+Reputation System, Ad hoc Mobile Network and etc. The goal of the attacker can vary too. The goal of an attacker can either be to control the system for self benefit
+or to subvert the normal functionality of the system. Attackers with the goal to manipulate the system will create sybil nodes that camouflage themselves as honest nodes and
+acts like honest nodes. For example, in an Online Social Network, the attacker can gradually create sybils and make them looks like real users by using other people's
+online profile and daily posts etc. Some attackers would go further to ensure their fake accounts act like regular users with regular logins, friend requests,
+friend request acceptances and real user like click streams. After the sybils have made enough connection with honest users, they are start spreading news or malware 
+to disrupt the targeted online social network. If the goal of the attacker is to subvert the targeted system, he/she will usually inject as many bad players into the system
+as possible. Sybils are like bombs that are being hide in the system and when they explode at once, the system could be destroyed.
 
-\subsection{Routing}
-In a distributed system, routing required the participation of many nodes. For example, when node A wants to look up node D, it will ask its neighbors and its neighbors would go ask their neighbors and on and on until someone has the knowledge of D and pass D’s location all the way back to A through a path. An attacker can inject many malicious nodes inside and network to disrupt the routing. In a sybil infected network, when A ask about D’s location, if the lookup path pass a malicious node, the malicious node can return a false address or can do nothing. Either way, the process of lookup will be slow down greatly. With sufficient proportions of sybil nodes, attackers can block communications among nodes altogether and render the system useless.
+In sum, attackers can create sybils quickly or gradually. Sybils can have a short or long camouflage periods when they act as honest players.
+Sybils can launch the attack all at once or they can misbehave one at a time. Sybils can have no connection within themselves or they can form relationship between each other
+to form a group.
+
+\subsection{Attacks in Different Domains}
+\subsubsection{Routing}
+In a distributed system, routing required the participation of many nodes. 
+For example, when node A wants to look up node D, it will ask its neighbors and its neighbors would go ask their neighbors and on and on until someone has the knowledge of D and pass D’s location all the way back to A through a path. An attacker can inject many malicious nodes inside and network to disrupt the routing. In a sybil infected network, when A ask about D’s location, if the lookup path pass a malicious node, the malicious node can return a false address or can do nothing. Either way, the process of lookup will be slow down greatly. With sufficient proportions of sybil nodes, attackers can block communications among nodes altogether and render the system useless.
 
 There are concrete real world examples of Sybil attacks on routing protocols.
 Geogaphical routing protocol is vulnerable to Sybil attacks because it requires nodes to exchange coordinate data with their neighbors to efficiently address packets. By using the Sybil attack, an attacker can create multiple identities in different geographical locations thus making him available in multiple places at once which violates the fundamental assumption of the routing protocol\cite{Karlof03securerouting}. Sybil attack pose a thread to the seemingly robust multipath routing protocol too.\cite{Karlof03securerouting}
 
 The popular Distributed Hash Tables (DHT) which underlies many peer-to-peer systems are also known to be vulnerable to Sybil attack. In DHT that are opened to the rest of the world like Vuze DHT, an adversary can introduce a large number of corrupt nodes in the network to degrade of the performance of the targeted DHT.\cite{Danezis05sybil-resistantdht} 
 
-\subsection{Content Rating System}
+\subsubsection{Content Rating System}
 Sybil attack is a fundamental thread to any user-based content rating system such as Goodreads, Youtube and IMDB. There are hugh incentives in this kind of attacks because attackers can promote low-quality content to a wide audience. For example, it has been studied that many people check the IMDB score before going to see the movie in theater. A high IMDB score will attrack more audiences to go to the theater thus making the movie more profitable. This is not hypertheticcal. There are successful real world cases. For example, the famous Slashdot poll on the best compute science school has caused students to write automatic scripts to vote for their schools repeatedly. Moreover, some underground companies made money through assisting clients in promoting their Youtube video's view counts by using a large number of Sybil accounts.\cite{Tran09SOC}
 
-\subsection{Reputation System}
+\subsubsection{Reputation System}
 Sybil attack post a significant challenge for building repuations systems. In a repuation system, an adversary can create a large number of identities and maliciously increase the reputation of one or more master identities by giving false recommendations to them. Sybils can also promote their own reputations and falsely accuse well-behaved players in the system to hurt their reputation. For example, in eBay.com repuation is calculated as the sum of (+1,0.-1) of all the trasaction ratings no matter how big the transaction is. Sybils can be create to make small transactions with a seller and automattically give them good reviews to boost their reputation. Afterward, the seller can use that repuation on a dishonest transaction of high value. By using Sybil attack, a dishonest seller can hide the fact he frequently misbehaves at a certain rate.
 
 Moreover, in networks that use repuation scheme to find misbehaving nodes/sybils, nodes with good reputation can report nodes they believe to be misbehaving in its neighbors. But this scheme can backfire.  For example, users can collude to artificially boost the reputation values of one or more friends, or falsely accuse well-behaved users of misbehavior. when adversaries control enough nodes and decide to repeatedly report honest nodes. The outcome is that most of the honest nodes will be considered malicious and be removed from the networks, the malicious nodes afterward will take full control of the whole system and use it for their their own benefits. Detecting such collusion attacks is yet an unsolved problem that severely limits the impact of existing reputation systems.\cite{Swamynathan10reputation}\cite{Lian07anempirical}
 
 
-\subsection{Other Contexts}
-There are many other forms of Sybil Attacks. It can be used to steal more share resrouces.
+\subsubsection{Peer-to-Peer System}
+Sybil attack can be used to gain a disproportional share of resources in P2P network.
+
 In a distributed system, people are sharing their resources such as bandwidth, memory and data. An adversary can create sybils to claim an unfair and disproportionate share of the resources. 
 
 Also in distributed storage, sybils can cause data lost by being selfish and not storing the fragment of data that are asked to store. Sybils can be used to degrade the performance of the distributed file system by not responding to file request or provide the wrong file segment. What's more, because some file systems replicate data to neighbor nodes, sybils can be used to crawl the entire file system through frequently hopping into different areas in the network.\cite{Lian07anempirical}\cite{wolchok09defeatingvanish}
