@@ -4,14 +4,25 @@
 Wikipedia, ``Sybil (book),'' 1973.
 \newblock [Online; accessed 02-May-2016].
 
+\bibitem{wang12dht}
+L.~Wang and J.~Kangasharju, ``Real-world sybil attacks in bittorrent mainline
+  dht,'' in {\em Global Communications Conference (GLOBECOM), 2012 IEEE},
+  pp.~826--832, Dec 2012.
+
+\bibitem{maymounkov02kademlia}
+P.~Maymounkov and D.~Mazi\`{e}res, ``Kademlia: A peer-to-peer information
+  system based on the xor metric,'' in {\em Revised Papers from the First
+  International Workshop on Peer-to-Peer Systems}, IPTPS '01, (London, UK, UK),
+  pp.~53--65, Springer-Verlag, 2002.
+
+\bibitem{wolchok09defeatingvanish}
+S.~Wolchok, O.~S. Hofmann, N.~Heninger, E.~W. Felten, J.~A. Halderman, C.~J.
+  Rossbach, B.~Waters, and E.~Witchel, ``Defeating vanish with low-cost sybil
+  attacks against large dhts,'' 2009.
+
 \bibitem{Karlof03securerouting}
 C.~Karlof and D.~Wagner, ``Secure routing in wireless sensor networks: Attacks
   and countermeasures,'' 2003.
-
-\bibitem{Danezis05sybil-resistantdht}
-G.~Danezis, C.~Lesniewski-laas, M.~F. Kaashoek, and R.~Anderson,
-  ``Sybil-resistant dht routing,'' in {\em In ESORICS}, pp.~305--318, Springer,
-  2005.
 
 \bibitem{Tran09SOC}
 N.~Tran, B.~Min, J.~Li, and L.~Subramanian, ``Sybil-resilient online content
@@ -28,10 +39,9 @@ Q.~Lian, Z.~Zhang, M.~Yang, B.~Y. Zhao, Y.~Dai, and X.~Li, ``An empirical study
   of collusion behavior in the maze p2p file-sharing system,'' in {\em In
   ICDCS}, 2007.
 
-\bibitem{wolchok09defeatingvanish}
-S.~Wolchok, O.~S. Hofmann, N.~Heninger, E.~W. Felten, J.~A. Halderman, C.~J.
-  Rossbach, B.~Waters, and E.~Witchel, ``Defeating vanish with low-cost sybil
-  attacks against large dhts,'' 2009.
+\bibitem{quercia10mobile}
+D.~Quercia and S.~Hailes, ``Sybil attacks against mobile users: Friends and
+  foes to the rescue.,'' in {\em INFOCOM}, pp.~336--340, IEEE, 2010.
 
 \bibitem{newsome04sybil}
 J.~Newsome, E.~Shi, D.~Song, and A.~Perrig, ``The sybil attack in sensor
