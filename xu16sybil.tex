@@ -424,9 +424,9 @@ After reading this survey you will have a deeper understanding of Sybil attacks 
 
 
 
-\section{Sybil Attacks} \label{SybilAttacks}
+
 % no \IEEEPARstart
-\subsection{Attack Model}
+\section{Attack Model}
 The context of the attack can be vastly different. Sybil attacks can take place in vastly different domains such as Wireless Sensor Network, Online Social Network, 
 Reputation System, Ad hoc Mobile Network and etc. The goal of the attacker can vary too. The goal of an attacker can either be to control the system for self benefit
 or to subvert the normal functionality of the system. Attackers with the goal to manipulate the system will create sybil nodes that camouflage themselves as honest nodes and
@@ -440,8 +440,8 @@ In sum, attackers can create sybils quickly or gradually. Sybils can have a shor
 Sybils can launch the attack all at once or they can misbehave one at a time. Sybils can have no connection within themselves or they can form relationship between each other
 to form a group.
 
-\subsection{Attacks in Different Domains}
-\subsubsection{Routing System}
+\section{Sybil Attacks} \label{SybilAttacks}
+\subsection{Routing System}
 Routing is an essential part of all distributed systems. Many P2P systems use DHT to store routing tables.
 There are two major strategies to perform routing table attacks in such P2P systems named horizontal attack and vertical attack according to \cite{wang12dht}.
 Assume a setting of Kademlia-based system\cite{maymounkov02kademlia} where the system has N nodes, each node maintains a k-bucket routing table and
@@ -471,7 +471,7 @@ fundamental assumption of the geographical routing protocol\cite{Karlof03securer
 Sybil attack poses a thread to the seemingly robust multipath routing protocol too. For more detail please see \cite{Karlof03securerouting}.
 
 
-\subsubsection{Content Rating System}
+\subsection{Content Rating System}
 Sybil attack is a fundamental thread to many user-based content rating system such as GoodReads, YouTube and IMDB. 
 There are huge incentives in this kind of attacks because attackers can promote low-quality content to a wide audience. 
 It has been studied that many people check the IMDB score before going to the movie theatre. 
@@ -480,7 +480,7 @@ There are successful real world cases.
 For example, the famous Slashdot poll on the best computer science school has caused students to write automatic scripts to vote for their schools repeatedly. 
 Moreover, some underground companies made money through assisting clients in promoting their YouTube video's view counts by using a large number of Sybil accounts.\cite{Tran09SOC}
 
-\subsubsection{Online Market Place}
+\subsection{Online Market Place}
 Sybil attack has posted a significant challenge for building reputation systems in online market place. 
 In a reputation system, an adversary can create a large number of identities and maliciously increase the reputation of one or more master identities by giving false 
 recommendations to them. 
@@ -500,7 +500,7 @@ the malicious nodes will take full control of the whole system and use it for th
 Detecting such collusion attacks is yet an unsolved problem that severely limits the impact of existing reputation systems.\cite{Swamynathan10reputation}\cite{Lian07anempirical}
 
 
-\subsubsection{Resource Sharing System}
+\subsection{Resource Sharing System}
 Sybil attack can be used to gain a disproportional share of resources in P2P network. 
 In a P2P system, people can share their resources such as bandwidth, memory, computation power and file. 
 An adversary can create sybils to claim an unfair and disproportionate share of the resources that were intended to be 
@@ -511,7 +511,7 @@ This seems like a fair file sharing system until an attacker creates many sybil 
 With Sybil attack, the attacker can generate unlimited credits and use them to quickly download files from others.
 
 
-\subsubsection{Distributed Storage System}
+\subsection{Distributed Storage System}
 In distributed storage system, nodes are required to score a fragment of a file and each fragment is duplicated into multiple machines to prevent data lost 
 and increase the performance of file download speed.
 Sybils can cause data lost by being selfish and not storing the fragment of data that they are asked to store. 
@@ -519,7 +519,7 @@ Sybils can also degrade the performance of the distributed file system by not re
 What's more, because some distributed file systems replicate data to neighbouring nodes, sybils can be used to crawl the entire file system through frequently 
 hopping to different locations in the network and obtain data fragments from all its neighbours.\cite{Lian07anempirical}\cite{wolchok09defeatingvanish}
 
-\subsubsection{Online Social Network}
+\subsection{Online Social Network}
 Online Social Networks(OSN) like Facebook and Twitter are vulnerable to Sybil attack as well. One goal of the attacker can be to crawl the OSN's user's personal data.
 Personal data includes name, phone number, age, address etc. In order to obtain those personal information
 attackers need to be friends with the actual users to be able to see those information.
@@ -529,7 +529,7 @@ After using sybils to crawl users' account information, attackers can then make 
 More and more people these days use facebook and twitter as their news channel and read posts on the Social network as they read news paper. 
 After successfully befriend many users and their friends, a sybil account can more effectively spread spam or even malicious files.
 
-\subsubsection{Collaborative Mobil Application}
+\subsection{Collaborative Mobil Application}
 People these days have spent more time on portable devices such as their smart phone or tablet than on their computers.
 Researchers have recently proposed general infrastructures for portable devices within proximity of each other to trade various services
 in a scalable and decentralize way without going through any Internet server. Collaborating devices can synchronize their times, run localization algorithms 
@@ -549,37 +549,48 @@ positive and false negative rates as much as possible.
 \subsubsection{Classification of Defenses}
 There are general defense mechanisms that work in most domains and there are domain specific approaches that target a specific domain and works better in that domain by levering some 
 domain specific features. We further divide the general approach into traditional approach and social network based approach. 
+Traditional approach were approaches found between 1999 to 2004. They focus mainly on building identity authentication, resource testing or human assisted sybil detection mechanisms
+ into existing systems. On the other hand, social network based approach started around 2006 tries to detect sybils by exploiting key social network structures underlying the system.
 
-The problem of defending against sybil attacks has been thoroughly study. 
-Some of the centralized solutions claim to be able to eliminate Sybil attacks at the price of adding authentication overhead to the system or sacrificing the 
-open nature of the system. Most of the approaches study in our survey are seeking to reduce the effect of Sybil attacks in their systems instead of eliminating them.
-There is always a trade among time, security and complexity in all the approaches. 
-In this section, we first classify the defense based on its timeline and then on the underlying technique they use. 
+\section{General Approach}
+There are two types of general approaches. The traditional approach and the social network based approach. 
 
-
-\subsection{Traditional Appraoch}
+\subsection{Traditional Approach}
+Traditional approach is based on research starting around 1999 and end around 2004. During that period of time, researchers have focused on preventing Sybil attacks by involving secure mechanisms such as digital signatures and identity authentication. Other methods have also been found to increase the resource cost of a Sybil attacks such as resource testing and recurring cost. Moreover, the human assisted sybil detection approach has been widely deployed during that time.
 
 \subsubsection{Trusted Certification}
 This is the most popular solution for countering Sybil attacks, it required a trusted certifying authority that validates the identity of a node before it joins the system. There are two variations in this approach. One is the centralized version, the other is the semi-centralized version. In the centralized version, it is assumped that there is a trusted central authority who can verify the validity of each participant. After the validation, a certificate will be given to each participant. The participant then can use the certificate to access the system. The model is very popular and has been used widely. Most authentication services use this kind of model. The semi-centralized approach seek to cut of the cost of asymmetric criptography used in the centralized version. It leverage a techniqe called partical identity verifications. The approach still need to rely on a trusted base station but reduce the involvement of a third party authority.
 
-The problem of  trusted certification approach is that it rely on a centralized trusted authority for credential generation, assignment and verification. However, it sacrifice the open nature that underlies the success of these distributed systems and increase the overhead of the system. \cite{newsome04sybil}\cite{Castro02Secure}\cite{Adya02FFA}.
+The problem of  trusted certification approach is that it rely on a centralized trusted authority for credential generation, assignment and verification. 
+However, it sacrifice the open nature that underlies the success of these distributed systems and increase the overhead of the system. 
+\cite{newsome04sybil}\cite{Castro02Secure}\cite{Adya02FFA}.
 
-\subsubsection{Resource Testing}
-Resource Testing is another line of solution. The idea behind resource testing is that each identity should own a fair amount of resource because it runs on a legitimate cilent otherwise there is a high potential that this is a sybil node. The question is how can we test that there are resource backing up a node? Some propose the testing of IP address because multiple identities sharing a single IP address is a good sign of Sybil attacks. Others test resources such as computing power, network bandwidth. A variation of the resource testing method is called “Recurring Costs”. For example, in one solution participants are required to perform some tasks such as solving puzzles\cite{Borisov06CPS} periodically. Turing tests are also suggested as a recurring cost solution\cite{Ahn03CUH}. With Recurring Costs, the cost of Sybil attacks have become more expensive but would the benefit still outweight the cost? Cloud services have definitely help drive down the cost of Sybil attacks.
+\subsubsection{Resource Testing and Recurring Cost}
+Resource Testing is another line of solution. The idea behind resource testing is that each identity should own a fair amount of resource because it runs on a 
+legitimate client otherwise there is a high potential that this is a sybil node. The question is how can we test that there are resource backing up a node? 
+Some propose the testing of IP address because multiple identities sharing a single IP address is a good sign of Sybil attacks. 
+Others test resources such as computing power, network bandwidth, MAC address. This approach in theory should work for systems that are in very low risk. 
+It’s easy to implement resource testing or recurring cost approaches but people these days can acquire a large amount of resources in a short period of time with the help of public cloud.
+Resource testing is mostly obsolete when an attacker can spin of hundreds of EC2 instances in a short period of time and terminate them after a few hours of attack. 
+As of this writing, the EC2 t2.nano instance will only cost \$0.0043 per hour with upfront payment.
 
-\subsection{Domain Specific Approaches}
-\subsubsection{Ad hoc Networks}
 
-In wireless ad hoc networks, a group of sybils are usually sharing the same device and they can be detected through monitoring signals’ features or the moving patterns of coexisting identities. SybilCast is a novoel protocol proposed in \cite{Zheng_thwartingsybil} that can limit the number of 
-fake identities in centralized multichannel wireless networks. SybilCast can ensure that each honest user gets at least a constant fraction of their fair share of the bandwidth and complete his or her data download in asymptotically optimal time.
+A variation of the resource testing method is called “Recurring Costs”. For example, in one solution participants are required to perform some tasks such as solving puzzles\cite{Borisov06CPS} periodically. The biggest disadvantage of computational puzzle is that it will prevent honest users with old computers from joining the system. Turing tests like CAPTCHA are also suggested as a recurring cost solution\cite{Ahn03CUH}. Using this approach, the cost of Sybil attacks have become more expensive but would the benefit still outweighs the cost? This approach is not recommended in high risk system for the following reasons. Computational puzzle can hold back entry level attacks but not advance attacks that leverage the public cloud’s computing power. How about turing tests? Is it not a lot of Online Social Network sites still use this approach? With crowdsourcing services like Amazon Mechanical Turk, turing tests can be crowdsourced at a reasonably low price.
 
-\subsubsection{Wireless Sensor Netowrk}
-In wireless sensor netowrk, Demirbas et al. proposed an sybil attack counter measurement by using received signal strength indicator (RSSI). The algorithm proposed in \cite{Demirbas06RSSI} claims to be light weight because it only require the colloboration of one other node apart from the receiver and accurate because it detects sybil attack cases with 100\% completeness and only a few percent false positives.
-\cite{Demirbas06RSSI}
+\subsubsection{Human Assisted Approach}
+We believe the human assisted approach has been the oldest sybil defense approach ever. 
+This approach has been used to fight against identity theft. Even today, there is still no automatic way to identify fake identity. 
+Online social network sites have long been using this approach to find fake accounts due the the failure in automated fake account detection. 
+This approach starts with the honest users report a potential fake accounts. 
+Afterwards, an account police start the manual inspection involving matching profile photos to the age or address, understanding natural language in posts, 
+examining the friends of the user, etc. 
+This approach is time consuming. 
+Tuenti a Spanish social network receives on average 12,000 reports regarding fake accounts per day and only about 5\% of them are indeed fake. 
+This approach can effectively offload some of the sybil detection work to its honest users but should be kept to its minimum by combining it with another 
+automated sybil detection technique.
 
 \subsection{Social Network-Based}
 Yu et al. has started a new era of sybil defense when he proposed the idea of detecting sybils using a unique structure in the social network graph. Even though attackers can inject many sybils into a social graph, the connections between honest users and sybils are limited\cite{Yu08SybilGuard}. For example, honest users on facebook would not randomly accept friends if they do not know the person. Suprisingly, the social network appraoch has showed to be able to overcome some of the earlier approaches limitations and shortcomings.
-
 \subsubsection{SybilGuard}
 SybilGuard designed by Yu et al. \cite{Yu08SybilGuard} is one of the first Sybil defense techniques based on Social Network. The approach assumes that each edge in the graph between two identities indicates a human-established trust relationship and malicious users can only create limited edges between honest users. SybilGuard bounds the number of malicious sybils a user can create by exploiting the property that there exist a disproportionaltely small "cut" in the 
 graph between the sybil nodes and the honest nodes.

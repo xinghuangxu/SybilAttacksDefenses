@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  5 MAY 2016 19:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  6 MAY 2016 17:38
 entering extended mode
 **"C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/survey/sybil_attack_l
 atex/xu16sybil.tex"
@@ -144,7 +144,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-[2]
+[2] [3]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -154,11 +157,11 @@ Missing character: There is no ù in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
- [3] (xu16sybil.bbl
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(xu16sybil.bbl [4])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -170,19 +173,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (xu16sybil.aux)
+[5
+
+] (xu16sybil.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 1072 strings out of 493634
- 19750 string characters out of 3134015
- 83334 words of memory out of 3000000
- 4522 multiletter control sequences out of 15000+200000
+ 1070 strings out of 493634
+ 19712 string characters out of 3134015
+ 82334 words of memory out of 3000000
+ 4520 multiletter control sequences out of 15000+200000
  35250 words of font info for 64 fonts, out of 3000000 for 9000
  1028 hyphenation exceptions out of 8191
- 26i,7n,19p,1108b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,7n,19p,1089b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname
 /8r.enc}<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmmi10.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fo
@@ -195,9 +200,9 @@ a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/k
 w/times/utmbi8a.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/urw/times/utmr8a.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on xu16sybil.pdf (4 pages, 124451 bytes).
+Output written on xu16sybil.pdf (5 pages, 126179 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

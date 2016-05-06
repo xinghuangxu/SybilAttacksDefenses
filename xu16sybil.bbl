@@ -71,16 +71,6 @@ L.~V. Ahn, M.~Blum, N.~J. Hopper, and J.~Langford, ``Captcha: Using hard ai
   Conference on Theory and Applications of Cryptographic Techniques},
   EUROCRYPT'03, (Berlin, Heidelberg), pp.~294--311, Springer-Verlag, 2003.
 
-\bibitem{Zheng_thwartingsybil}
-C.~Zheng and D.~S. Gilbert, ``Thwarting sybil attacks and malicious disruption
-  in wireless networks,” http://www.comp.nus.edu.sg.''
-
-\bibitem{Demirbas06RSSI}
-M.~Demirbas and Y.~Song, ``An rssi-based scheme for sybil attack detection in
-  wireless sensor networks,'' in {\em World of Wireless, Mobile and Multimedia
-  Networks, 2006. WoWMoM 2006. International Symposium on a}, pp.~5 pp.--570,
-  2006.
-
 \bibitem{Yu08SybilGuard}
 H.~Yu, M.~Kaminsky, P.~B. Gibbons, and A.~D. Flaxman, ``Sybilguard: Defending
   against sybil attacks via social networks,'' {\em IEEE/ACM Transactions on
