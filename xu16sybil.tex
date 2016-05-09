@@ -87,7 +87,9 @@
 
 
 
+\usepackage{amsthm}
 
+\newtheorem{assumption}{Assumption}
 
 
 % *** CITATION PACKAGES ***
@@ -404,30 +406,37 @@ personalities according her doctor Cornelia B Wilbur.\cite{sybil16wiki}
 
 This survey is about a specific system security attack name Sybil Attack. Sybil attack takes place when an adversary in a system acts as if he is multiple users
 with different identities in order to disrupt the proper functionality of the underlying system and benefit himself. Sybil attack has proven to be harmful in many systems. 
-For example, in a book recommender system.
+
+Sybil attack was not possible when distributed systems were closed in nature. A good example is the flight reservation system used by airlines.
+The distributed airline reservation systems are closed in nature because they have a static set of nodes and there is a strict process involving human 
+administrators to add a new node to the system. The users of the system are bound to real human beings. Things are quite different today due to the 
+advancement of Internet and other peer-to-peer technologies, open access systems are becoming the norm in many domains. The benefit of open access
+system is that it would enable the penetration of a specific technology. Imaging if there is a strict process for creating accounts that involve human inspection on Facebook, it would take a lot longer for it to reach today's 1 billion users. 
+
+While open distributed systems were the original target of Sybil attack, centralized systems are vulnerable to it as well.
+For example, in a centralized book recommender system like GoodRead.
 The popularity of a book depends on the number of people who have liked it. In such a system, the goal is to find books that is likely to be of interest to users based on others'
 recommendations. An attacker can create many fake accounts and out vote legitimate users on the books he/she wants to promote or demote. The success of the attack is almost guaranteed given
 the fact that most legitimate users are too lazy to vote in a recommender system. 
-There are many other domains that are vulnerable to Sybil attacks. It's impossible to enumerate all the domains susceptible to Sybil attack in 
+Sybil attacks influence many systems, and we try to classify sybil attack based on the domains they target because attacks in the same domain tend to
+have similar attack methods and attack goals.
+It's impossible to enumerate all the domains susceptible to Sybil attack in 
 this survey, so we have selected some typical domains that are well studied in section \ref{SybilAttacks}. If your domain is not listed in \ref{SybilAttacks}, 
-that doesn't mean your domain is free from Sybil attacks. You should ask yourself if it's possible to create fake identities in your system, if your answer is yes then you should
-keep an eye open for Sybil attacks.
+that doesn't mean your domain is free from Sybil attacks. You should ask yourself if it's possible to create fake identities in your system, if your answer is yes then you should keep an eye open for Sybil attacks.
 
 The following is a roadmap of the rest of the paper.
-In section \ref{SybilAttacks}, we define some common properties of sybil and a list of some major domains that are susceptible to Sybil attacks are provided.
-We define the goal of the defense and three main types of defense mechanisms in section \ref{SybilDefense}. 
-The three categories of Sybil defenses are traditional defense, social
-network based defense and domain specific defense. We provide descriptions on how the defense works and point our their advantage/disadvantage
-in terms of their efficiency, false positive/negative rate, deploy-ability and more. In the last section \ref{Conclusion}, we would conclude this survey.
-After reading this survey you will have a deeper understanding of Sybil attacks and should be equipped with many techniques to defense against Sybil attacks.
-
-
+In section \ref{AttackModel}, we define some common properties of sybil. In section \ref{SybilAttacks}, a list of some major domains that are susceptible to Sybil attacks are provided.
+We define the goal of the defense and the general and domain specific defense mechanisms in section \ref{SybilDefense}. 
+There are two kind of general sybil defenses: traditional defense and social
+network based defense. We provide descriptions on how the defense approaches work and point our their advantage/disadvantage
+in terms of their efficiency, false positive/negative rate, deployability and more. In the last section \ref{Conclusion}, we conclude this survey.
+After reading this survey readers will have a deeper understanding of Sybil attacks and should be equipped with many techniques to defense against Sybil attacks.
 
 
 
 % no \IEEEPARstart
-\section{Attack Model}
-The context of the attack can be vastly different. Sybil attacks can take place in vastly different domains such as Wireless Sensor Network, Online Social Network, 
+\section{Attack Model} \label{AttackModel}
+The context of the attack can be vastly different. Sybil attacks can take place in many different domains such as Wireless Sensor Network, Online Social Network, 
 Reputation System, Ad hoc Mobile Network and etc. The goal of the attacker can vary too. The goal of an attacker can either be to control the system for self benefit
 or to subvert the normal functionality of the system. Attackers with the goal to manipulate the system will create sybil nodes that camouflage themselves as honest nodes and
 acts like honest nodes. For example, in an Online Social Network, the attacker can gradually create sybils and make them looks like real users by using other people's
@@ -537,8 +546,8 @@ that increase the precision of street map software, borrow each other's bandwidt
 easily be disrupted by uncooperative and malicious sybils. Those who only want to profit from these services and not providing anything in return.
 They can usually create a number of sybil identities to avoid being tracked down since no identity certification authority is involved in this kind of model.\cite{quercia10mobile}
 
-\section{Sybil Defense} \label{SybilDefense}
-\subsubsection{Defense Goal}
+\section{Sybil Defense Overview} \label{SybilDefense}
+\subsection{Defense Goal}
 Before going into the details of sybil defenses, the defense goal should be defined. It should be obvious that the ideal goal is to eliminate Sybil attack
 but this goal might not be realistic deal to the fact that we don't want to enforce a strict rule whenever people join the our system.
 Without a centralized trusted certification based scheme, the best we can do is to restrict the effects of sybils. False positive rate and false negative rate 
@@ -546,24 +555,24 @@ can serve as good metrics when evaluating a defense approach. False positive hap
 false negative happens when a sybil node is not detected and treated as a honest user. So the goal in the following defense mechanisms is to minimize the false 
 positive and false negative rates as much as possible.
 
-\subsubsection{Classification of Defenses}
+\subsection{Classification of Defenses}
 There are general defense mechanisms that work in most domains and there are domain specific approaches that target a specific domain and works better in that domain by levering some 
 domain specific features. We further divide the general approach into traditional approach and social network based approach. 
 Traditional approach were approaches found between 1999 to 2004. They focus mainly on building identity authentication, resource testing or human assisted sybil detection mechanisms
  into existing systems. On the other hand, social network based approach started around 2006 tries to detect sybils by exploiting key social network structures underlying the system.
 
-\section{General Approach}
+\section{General Defense Approach} 
 There are two types of general approaches. The traditional approach and the social network based approach. 
 
-\subsection{Traditional Approach}
+\subsection{Traditional Defense}
 Traditional approach is based on research starting around 1999 and end around 2004. During that period of time, researchers have focused on preventing Sybil attacks by involving secure mechanisms such as digital signatures and identity authentication. Other methods have also been found to increase the resource cost of a Sybil attacks such as resource testing and recurring cost. Moreover, the human assisted sybil detection approach has been widely deployed during that time.
 
 \subsubsection{Trusted Certification}
-This is the most popular solution for countering Sybil attacks, it required a trusted certifying authority that validates the identity of a node before it joins the system. There are two variations in this approach. One is the centralized version, the other is the semi-centralized version. In the centralized version, it is assumped that there is a trusted central authority who can verify the validity of each participant. After the validation, a certificate will be given to each participant. The participant then can use the certificate to access the system. The model is very popular and has been used widely. Most authentication services use this kind of model. The semi-centralized approach seek to cut of the cost of asymmetric criptography used in the centralized version. It leverage a techniqe called partical identity verifications. The approach still need to rely on a trusted base station but reduce the involvement of a third party authority.
+This is the most popular solution for countering Sybil attacks, it requires a trusted certifying authority to validates the identity of a node before it joins the system. There are two variations in this approach. One is the centralized version, the other is the semi-centralized version. In the centralized version, it is assumed that there is a trusted central authority who can verify the validity of each participant. After the validation, a certificate will be given to each participant. The participant then can use the certificate to access the system. The model is very popular and has been used widely. Most authentication services use employ this sybil defense approach and it can completely eliminate sybil attack. Given the obvious advantage, this centralized defense mechanism is very susceptible to single point failure and could be the performance bottleneck to the whole system. For example, any down time of the central authentication service will bring down the whole system.
 
-The problem of  trusted certification approach is that it rely on a centralized trusted authority for credential generation, assignment and verification. 
-However, it sacrifice the open nature that underlies the success of these distributed systems and increase the overhead of the system. 
-\cite{newsome04sybil}\cite{Castro02Secure}\cite{Adya02FFA}.
+The semi-centralized approach seek to cut the cost of asymmetric cryptography used in the centralized version. It leverage a technique called partial identity verifications. This approach still need to rely on a trusted base station but reduce the involvement of a third party authority. The semi-centralized version has better performance than the centralized version given that it distribute the service workload to a group of base stations spread out in different locations of the system. The disadvantage compared to the centralized version is that it would allow a small amounts sybil entering the system due the fact that there could be a mismatch of the register list in each trusted base station. Moreover, the semi-centralized approach is harder to implement and maintain. 
+
+The common problem to the trusted certification approaches is that they rely on one or more centralized trusted authorities for credential generation, assignment and verification. However, this type of approaches sacrifice the open nature that underlies the success of many systems and increase the overhead in joining those systems.\cite{newsome04sybil}\cite{Castro02Secure}\cite{Adya02FFA}.
 
 \subsubsection{Resource Testing and Recurring Cost}
 Resource Testing is another line of solution. The idea behind resource testing is that each identity should own a fair amount of resource because it runs on a 
@@ -575,7 +584,7 @@ Resource testing is mostly obsolete when an attacker can spin of hundreds of EC2
 As of this writing, the EC2 t2.nano instance will only cost \$0.0043 per hour with upfront payment.
 
 
-A variation of the resource testing method is called “Recurring Costs”. For example, in one solution participants are required to perform some tasks such as solving puzzles\cite{Borisov06CPS} periodically. The biggest disadvantage of computational puzzle is that it will prevent honest users with old computers from joining the system. Turing tests like CAPTCHA are also suggested as a recurring cost solution\cite{Ahn03CUH}. Using this approach, the cost of Sybil attacks have become more expensive but would the benefit still outweighs the cost? This approach is not recommended in high risk system for the following reasons. Computational puzzle can hold back entry level attacks but not advance attacks that leverage the public cloud’s computing power. How about turing tests? Is it not a lot of Online Social Network sites still use this approach? With crowdsourcing services like Amazon Mechanical Turk, turing tests can be crowdsourced at a reasonably low price.
+A variation of the resource testing method is called "Recurring Costs". For example, in one solution participants are required to perform some tasks such as solving puzzles\cite{Borisov06CPS} periodically. The biggest disadvantage of computational puzzle is that it will prevent honest users with old computers from joining the system. Turing tests like CAPTCHA are also suggested as a recurring cost solution\cite{Ahn03CUH}. Using this approach, the cost of Sybil attacks have become more expensive but would the benefit still outweighs the cost? This approach is not recommended in high risk system for the following reasons. Computational puzzle can hold back entry level attacks but not advance attacks that leverage the public cloud's computing power. How about turing tests? Is it not a lot of Online Social Network sites still use this approach? With crowdsourcing services like Amazon Mechanical Turk, turing tests can be crowdsourced at a reasonably low price. A quick Google search shown that the market price to solve a 1000 CAPTCHAs is just a few dollars.
 
 \subsubsection{Human Assisted Approach}
 We believe the human assisted approach has been the oldest sybil defense approach ever. 
@@ -589,27 +598,100 @@ Tuenti a Spanish social network receives on average 12,000 reports regarding fak
 This approach can effectively offload some of the sybil detection work to its honest users but should be kept to its minimum by combining it with another 
 automated sybil detection technique.
 
-\subsection{Social Network-Based}
-Yu et al. has started a new era of sybil defense when he proposed the idea of detecting sybils using a unique structure in the social network graph. Even though attackers can inject many sybils into a social graph, the connections between honest users and sybils are limited\cite{Yu08SybilGuard}. For example, honest users on facebook would not randomly accept friends if they do not know the person. Suprisingly, the social network appraoch has showed to be able to overcome some of the earlier approaches limitations and shortcomings.
-\subsubsection{SybilGuard}
-SybilGuard designed by Yu et al. \cite{Yu08SybilGuard} is one of the first Sybil defense techniques based on Social Network. The approach assumes that each edge in the graph between two identities indicates a human-established trust relationship and malicious users can only create limited edges between honest users. SybilGuard bounds the number of malicious sybils a user can create by exploiting the property that there exist a disproportionaltely small "cut" in the 
-graph between the sybil nodes and the honest nodes.
+\subsection{Social Network-Based Defense}
+Social network based sybil defense (SNSD) aim at leveraging the underlying social structure within a system to defend against Sybil attacks. Why is this a general approach not a domain specific approach? The reason is that in most systems we can modify the underlying communication protocol and enforce certain social structures that would help in preventing Sybil attacks. For example, in a file sharing P2P system, system designers can enforce some social structure between users. Connections can only be built based on trust between users. If you think it is too much trouble to implement a social network on top of your system you could offload this task to some online social network site through asking your user to login to your system through facebook or google+ accounts.
 
-\subsubsection{SybilLimit}
-The approach take by SybilLimit in \cite{Yu08SybilLimit} is the same as SybilGuard but SybilGuard can dramatically reduce the number of sybil nodes accepted by a factor of  $ \sqrt{n} $.
+\subsection{Overview}
+Yu et al. have started a new era of sybil defense when they proposed the idea of detecting sybils using a unique structure in the social network graph in their first paper \cite{Yu08SybilGuard} in 2006. We will provide some definitions and intuitions in this overview. 
 
-\subsubsection{SybilInfer}
-SybilInfer takes the approach of labelling nodes in a social network as honest users or Sybils. Internally, it uses a probabilistic model of honest social networks as its knowledge base and an inference engine to obtain the potential regions of dishonest nodes.
-It claims to be more accurate and more applicable when compare to both SybilGuard and SybilLimit.
+Social network can mean different things in different context. Here we tries to grasp the essence of social network when it comes to sybil defenses. A distributed system D as a undirected graph G, each node in G represents an identity in D. An edge between tow nodes in G corresponds to human established trust relations between the two corresponding identities in the real world. We call a subgraph of G containing of only honest nodes a Honest Region H, and subgraphs of G containing only sybil nodes a sybil region S (Figure 1). The edges between H and S are called attack edges. By converting D into G, we convert the sybil defense problem into finding sybils in G where G is a social network. \cite{yu11sybildefensesurvey}
+
+The following is three key insights for the social network based protocol proposed for sybil detection in G:
+\begin{enumerate}
+  \item The number of attack edges is independent of the number of sybil identities, and is limited by the number of trust relation pairs between malicious users and honest users.
+  \item If the malicious users create too many sybil identities and given that the number of attack edges remains fixed, there exist a small quotient cut, a small set of edges whose removal disconnects a large number of nodes (all the sybil identities) from the rest of the graph.
+  \item There is known honest node used for breaking the symmetry when sybil group has similar or bigger size then the honest group.
+\end{enumerate}
+
+We will use the following notations in describing the rest of the social network sybil defense techniques:
+
+\begin{center}
+  \begin{tabular}{ | l | l |}
+    \hline
+    n & total number of nodes in the honest region  \\ \hline
+    m & total number of edges in the honest region  \\ \hline 
+    g & total number of attack edges  \\ \hline
+        t & mixing time of the honest region  \\ \hline
+            w & length of the random walks   \\ 
+    \hline
+  \end{tabular}
+\end{center}
+
+\begin{assumption}
+The honest region of G has a mixing time no large than t(n), where t(n) is a function of the size of the honest region. \cite{yu11sybildefensesurvey}
+\end{assumption}
+
+Because finding small cuts in graph is a NP-hard problem, SNSD converts the problem to something relating to mixing time. Mixing time describes how fast random walks in a given graph reach its stationary distribution. Large mixing time means that it would require a longer random walk to approach the graph's stationary distribution. A connected graph having a small quotient cut is guaranteed to have a small conductance and thus a large mixing time. This means too many sybils nodes in G will increase the mixing time of G. Because of Assumption 1, the end guarantees of SNSD depend on the definition of t. With smaller t, there will less sybil nodes but more honest nodes falsely labelled as sybil nodes. With larger t, there will be more sybil nodes allowed in G and less honest nodes will be regarded as sybil nodes. \cite{yu11sybildefensesurvey}
+
+\subsection{SybilGuard and SybilLimit}
+SybilGuard\cite{Yu08SybilGuard} and SybilLimit\cite{Yu08SybilLimit} both designed by Yu et al.  are the earliest SNSD techniques. Both approaches based on Assumption 1 and leverage random walk techniques to exploit the abnormal mixing time to bound the number of sybil groups and the size of a sybil group a malicious user can create in G. Since both approaches are very similar and SybilLimit is an enhancement on top of SybilGuard we will mainly cover SybilGuard here.
+
+SybilGuard assumes that there is known honest node. From this original honest node, we initialized k random paths with a length of w = $O(nlog(n)))$. The reason behind the selection of the random walk length is well explained in \cite{Yu08SybilGuard}. . We call the paths originated from the honest node 'verifiers'. To decide if a suspect nodes is honest or sybil, we start k random paths from the suspect node and if a suspect path meet a verifier we believe this path is verified once. If a suspect path meet up with s verifiers where s is predefined value, we believe the path is a trusted path. The the majority of the paths coming out from a suspect node is trusted path, the suspect node will be treated as honest node otherwise it will be classified as sybil node. SybilGuard works well because most of the random paths originate from a suspect node is likely to stay in their own region, either honest region or sybil region due to the fact that there are very few bridges (attack edges) connecting the two regions. The above is a simplified explanation of SybilGuard. 
+
+SybilLimit is an enhancement on SybilGuard. Each node generates in SybilLimit generates $O(\sqrt m)$ random paths with length w = $O(log(n))$. Instead of using node as intersection points, SybilLimit use edges. SybilLimit provides a near-optimal guarantees. SybilLimit allows $O(log(n))$ sybil nodes while SybilGuard would tolerate $O(\sqrt n log(n))$
+
+\subsection{SybilInfer}
+SybilInfer \cite{danezis09sybilinfer} protocol is similar to SybilLimit and SybilGuard. They all assume sybil nodes will increase the mixing time of the graph and they all use random walk. However, SybilInfer does not provide a complete decentralized design (a centralized knowledge of G is assumed) and does not have a provable end guarantee.
 
 
-\section{Project Deliverable}
-% no \IEEEPARstart
-We have listed potential threads of Sybil attacks under different context and showed different types of counter measurements. 
-We want the final paper to serve as introduction and guidline for sybil attacks and defenses.
-To obtain this goal, we would like to present more detail explaintion of each Sybil defense approaches in the final survey. Furthermore, a comphrehensive comparison among the different defense mechanisms will be included.
-If time permits, we would also look into evaluating some of the defense mechanisms by using metrics like false negative/positive rate, the time and code complexity the soution would add to the existing system.
-Also we would like to point out potential directions/opportunities in the research of sybil attacks/defenses in the final survey paper.
+SybilInfer works by first converting G into a new Markov chain G', so that the node stationary distribution on G' is uniform. The transformation is done through changing the transition probability on each edge from 1/degree(A) in G to min(1/degree(A),1/degree(B)) in G'. \cite{danezis09sybilinfer} assumes without proving the if G has small mixing time than G' has small mixing time as well. For each node A , a number of random walks are initiated with a walk length of w = t' where t' is the mixing time of G'. SybilInfer defines the tail distribution of A as the distribution of the last nodes visited by all the random walks originated from A. After obtaining the tail distribution of each node, SybilInfer computes a set H where each node in H has a tail distribution similar to a uniform distribution of H. All nodes in H will be labelled as honest and the other nodes will be regarded as sybils. Sybilnfer provides no prove on end guarantees such as false negative or false positive rates but it conduct an experiment with 1000 nodes and show that it significantly outperforms SybilLimit. The above is a conceptual explanation of how SybilInfer works and the actual implementation is quite different, please see \cite{danezis09sybilinfer}.
+
+\subsection{SumUp and Gatekeeper}
+Gatekeeper \cite{tran11optimal} is an enhancement on both SumUp and SybilLimit but it requires that the honest region of G to be reasonably balanced. Gatekeeper is also a decentralized version of the centralized SumUp approach. We will first cover how Gatekeeper works than come back to SumUp.
+
+Starting with some random roots, Gatekeeper grows each root node using special breadth first search. Each root node is initialized with $\theta(n)$ tickets and each node in G will received tickets from its parents. For a specific node A, after receiving tickets from its parents, A will consume one ticket then it will distribute the rest of the ticket evenly to its neighbors. GateKeeper will label a node honest if it receives tickets pass a threshold after the growth of all the root nodes, otherwise it will be regarded as sybil.
+
+The upper bound for the number of sybils allowed in Gatekeeper depends on g, where g is the number of attack edges. When g is large such as $\theta(n^{1-c})$ where $0<c<1$, the guarantee is the same as SybilLimit $O(log(n))$. If g is close to $O(n/log(n))$, only $O(log(g)$ number of sybils will be mislabelled as honest. With a small g where g= $\theta(1)$, the bound is $O(1)$  which is asymptotically better than SybilLimit. The disadvantage of Gatekeeper as we have pointed out earlier is that it requires the honest region to be reasonably balanced.
+
+SumUp \cite{tran09voting} is a centralized version of GateKeeper and does not require the honest region to be reasonably balanced. It uses adaptive maximum flow on the social network to label hones nodes. It has a sybil tolerance similar to GateKeeper, but it runs a lot slower than SybilLimit and GateKeeper.
+
+\subsection{Summary}
+Assumption 1 is where all the SNSD approaches rely on. There are many more SNSD approaches that based on Assumption 1 but utilize different techniques in detecting sybils. We will not be able to cover all those approaches in detail due to the length of this survey, but we will try our best to summarize them here. 
+
+Other than random walk, community detection technique is another technique we can used to find H and S regions. The problem of community detection has been well studied for decades and people have proposed ways to find the minimum cut between H and S regions using state of the art community detection algorithms. SybilDefender\cite{wei13sybildefender}, SybilShield\cite{shi13sybilshield} and VoteTrust\cite{xue13votetrust} represent some of the best research efforts in utilizing community detection algorithms in sybil detection. The key drawback of this type of approach is that it does not provide any formal end guarantee on false positive and false negative rates. Moreover, community detection algorithms are not designed for adversarial cases and most of them required global knowledge which makes it harder to decentralized. We suggest that community detection approach should be considered only if community information is valuable to your system.
+
+PageRank is another technique that could hep in finding sybils. The ranking of a page depends on the quality and quantity its referenced links reside in other pages. Instead of ranking pages, we can rank nodes in G and nodes with lower ranking have higher possibility of being sybils. The original PageRank algorithm has been proven to be vulnerable to Spam Farm attack, but there are many enhancements to the PageRank algorithm we can apply to bound the effect of Spam Farm attack. SybilRank\cite{cao12sybilrank} is one of the first sybil detection approaches that utilize PageRank as the underlying method but it is susceptible to attacks that used to target the PageRank algorithm. By the time of this writing, SybilRank is the only SNSD approach that has been deployed in a real world setting. After deployment, SybilRank has found 200k accounts in Tuenti, a Spanish Online Social Network. Among the 200k accounts, more than 90\% of them are actually fake accounts. SybilRank claims to achieve the same end guarantee as SybilLimit but much better run time performance when applied to a large social network graph. Integro \cite{boshmaf15integro} is an enhancement on SybilRank by first predict victims and use the predicted victims information in the PageRank process. Integrao is also deployed in Tuenti and achieve an order of magnitude higher precision when compare with SybilRank. Both SybilRank and Integrao  are designed to detect sybils in OSN, it's likely that they will also work in other domains but no prove has been given.
+
+\section{Domain Specific Sybil Defense}
+Domain Specific Sybil Defense (DSSD) try to exploit the domain specific features to help prevent against sybil attacks. Since we will not be able to list all the DSSD approaches we will like to present a few that are more representative than others in the following few subsections. Some DSSD approaches have better performance than general approaches and require less implementation and maintenance overhead.
+
+\subsection{Recommendation Systems}
+DSybil\cite{yu09dsybil} is an innovative approach trying to reduce the influence of sybils in recommendation system. DSybil has provable guarantees that are optimal under its setting. The evaluation result shows that DSybil would continue to provide high quality recommendation even under a potential sybil attack launched from a million node botnet. DSybil mainly exploit two domain specific features of recommendations systems. The first one is the  heavy-tail distribution of the typical voting behavior of the honest identities. The second feature is trust. A recommender system should trust a person more (less), if he/she voted for good (bad) objects and objects with more votes should probably be recommended over objects with fewer votes.
+
+\subsection{Ad hoc Networks}
+In wireless ad hoc networks, a group of sybils are usually sharing the same device and they can be detected through monitoring signals? features or the moving patterns of coexisting identities. SybilCast is a novel protocol proposed in \cite{Zheng_thwartingsybil} that can limit the number of 
+fake identities in centralized multichannel wireless networks. SybilCast can ensure that each honest user gets at least a constant fraction of their fair share of the bandwidth and complete his or her data download in asymptotically optimal time.
+
+\subsection{Wireless Sensor Netowrk}
+In wireless sensor netowrk, Demirbas et al. proposed an sybil attack counter measurement by using received signal strength indicator (RSSI). The algorithm proposed in \cite{Demirbas06RSSI} claims to be light weight because it only require the colloboration of one other node apart from the receiver and accurate because it detects sybil attack cases with 100\% completeness and only a few percent false positives.
+\cite{Demirbas06RSSI}
+
+\subsection{Online Social Network}
+Yu et al.\cite{yang11sybilwild} leverage some behavioral attributes of fake accounts to detect them in Renren, the biggest Online Social Network in China. The identified behavioral attributes include invitation frequency, outgoing requests accepted, incoming requests accepted and clustering coefficient. Invitation frequency is the number of friend requests a user has sent out during a fixed amount of time. Sybil accounts are believed to have sent out more friend requests than honest users. Moreover, sybil accounts tend to have a very low outgoing requests acceptance rate, because honest users are less likely to accept friend requests from a  stranger. What's more, sybil users tend to accept most of the incoming friend requests while honest users only accept a portion of all incoming friend requests. Last but not least, clustering coefficient (cc) is a metric used to measures the mutual connectivity of a user's friends. Sybil accounts are likely to befriend users who don't know each other and as a result have a low cc value. All the above features are feed into a support vector machine and the result is promising. The deployment of this technique by Renren found more than 100,000 fake accounts in less than 6 months.
+
+
+\section{Conclusion} \label{Conclusion}
+This survey has showed a full picture of the effects of Sybil attacks in many different domains. We described how those attacks are being carried out. If you are maintaining a system that could potentially be the target of Sybil attacks, you should seriously consider adding protection in your system. 
+
+As a guide for Sybil defense, this survey presents two type of defense mechanisms.  The general defense and the domain specific defense. The general defense consists of the traditional defenses and the newly emerged social network based defenses. 
+
+There are two types of general defense approaches. The traditional sybil defense approach (TSD) and the social network based sybil defense approach (SNSD)
+
+TSD includes trusted authority authentication, recurring cost, resource testing and human assisted defense. Maybe you might think that traditional approach has been outdated but that it's not true, they are actually the most popular approaches in terms of deployment rate. A lot of systems today has no sybil tolerance so the only option they have is to go with the central authority certification appraoch. Resource testing especially IP address testing is also popular because it is very easy to implement and enforce in real world but this approach provides an extremely week bound on the number of sybils an attacker can create. In the era of Cloud, even casual attackers can instantly acquire large amount of resources in a small cost so resource testing should be your last option. System administrator should compare the cost of creating sybils and the benefit the attacker would acquire carefully before they decide to go with resource testing. Recurring cost is very similar to resource testing except that the recurring cost can be turing test that machine would not be able to solve efficiently. While turing test could rule out machines and raise the Sybil attacks cost on those system, one should not be too optimistic about this approach either mainly because the advent of crowdsourcing. What's more, the last traditional approach human assisted defense tries to offload the sybil detection work to some of the systems' users. Honest users in this case has mechanisms to monitor their neighbors and report them to a human judge and the judge would investigate if the reported node is a sybil or not. This approach can be very expensive due to human involvement in the process.
+
+If none of the TSDs do not appeal to you, there is the more advance approach that could keep your system open and provide a tighter bound on the negative effects of Sybil attacks. SNSD has been the most popular automated sybil detection approach by exploiting the underlying social network structure in your systems. The effectiveness of this approach depends on how much your system follow the social network structure. Is it easy for honest node to connect with sybil nodes in your system? If yes, this approach is not for your system. Also, this approach does not stop sybils from joining the system but detect them or reduce their effects after their joining. Most of the SNSD approaches have not been deployed into the wild mainly because the implementation, runtime and maintenance overhead is too high for them. SybilRank and Integro are the only two approaches that have been successfully deployed and have proven to be effective in automatically detecting sybils in OSN. If your system does not have a social network structure but would want to use this approach, there is a workaround to this. You can authenticate your systems' users through any online social networks and obtain their social connections through their online social network accounts.
+
+Before going for a general approach you own yourself to investigate the possibility of a better domain specific sybil defense (DSSD) approach in your domain. Sometimes you could combine general approaches with DSSDs to further enforce your system resilience to sybil attacks.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -729,7 +811,7 @@ Also we would like to point out potential directions/opportunities in the resear
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
 
-\bibliography{diy} 
+\bibliography{xu16sybil} 
 \bibliographystyle{ieeetr}
 
 

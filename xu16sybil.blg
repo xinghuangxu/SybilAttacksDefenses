@@ -1,5 +1,50 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: xu16sybil.aux
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: xu16sybil.aux
 The style file: ieeetr.bst
-Database file #1: diy.bib
+Database file #1: xu16sybil.bib
 Warning--empty journal in Swamynathan10reputation
-(There was 1 warning)
+Warning--empty institution in danezis09sybilinfer
+Warning--empty journal in boshmaf15integro
+You've used 29 entries,
+            1876 wiz_defined-function locations,
+            660 strings with 9196 characters,
+and the built_in function-call counts, 9162 in all, are:
+= -- 854
+> -- 394
+< -- 1
++ -- 142
+- -- 113
+* -- 681
+:= -- 1245
+add.period$ -- 29
+call.type$ -- 29
+change.case$ -- 29
+chr.to.int$ -- 0
+cite$ -- 32
+duplicate$ -- 472
+empty$ -- 879
+format.name$ -- 113
+if$ -- 2241
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 24
+newline$ -- 91
+num.names$ -- 29
+pop$ -- 134
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 360
+stack$ -- 0
+substring$ -- 647
+swap$ -- 195
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 84
+width$ -- 31
+write$ -- 279
+(There were 3 warnings)

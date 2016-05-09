@@ -76,9 +76,75 @@ H.~Yu, M.~Kaminsky, P.~B. Gibbons, and A.~D. Flaxman, ``Sybilguard: Defending
   against sybil attacks via social networks,'' {\em IEEE/ACM Transactions on
   Networking}, vol.~16, pp.~576--589, June 2008.
 
+\bibitem{yu11sybildefensesurvey}
+H.~Yu, ``Sybil defenses via social networks: A tutorial and survey,'' {\em
+  SIGACT News}, vol.~42, pp.~80--101, Oct. 2011.
+
 \bibitem{Yu08SybilLimit}
 H.~Yu, P.~B. Gibbons, M.~Kaminsky, and F.~Xiao, ``Sybillimit: A near-optimal
   social network defense against sybil attacks,'' in {\em Security and Privacy,
   2008. SP 2008. IEEE Symposium on}, pp.~3--17, May 2008.
+
+\bibitem{danezis09sybilinfer}
+G.~Danezis and P.~Mittal, ``Sybilinfer: Detecting sybil nodes using social
+  networks,'' Tech. Rep. MSR-TR-2009-6, January 2009.
+
+\bibitem{tran11optimal}
+N.~Tran, J.~Li, L.~Subramanian, and S.~S.~M. Chow, ``Optimal sybil-resilient
+  node admission control,'' in {\em INFOCOM, 2011 Proceedings IEEE},
+  pp.~3218--3226, April 2011.
+
+\bibitem{tran09voting}
+N.~Tran, B.~Min, J.~Li, and L.~Subramanian, ``Sybil-resilient online content
+  voting,'' in {\em Proceedings of the 6th USENIX Symposium on Networked
+  Systems Design and Implementation}, NSDI'09, (Berkeley, CA, USA), pp.~15--28,
+  USENIX Association, 2009.
+
+\bibitem{wei13sybildefender}
+W.~Wei, F.~Xu, C.~C. Tan, and Q.~Li, ``Sybildefender: A defense mechanism for
+  sybil attacks in large social networks,'' {\em IEEE Transactions on Parallel
+  and Distributed Systems}, vol.~24, pp.~2492--2502, Dec 2013.
+
+\bibitem{shi13sybilshield}
+L.~Shi, S.~Yu, W.~Lou, and Y.~T. Hou, ``Sybilshield: An agent-aided social
+  network-based sybil defense among multiple communities,'' in {\em INFOCOM,
+  2013 Proceedings IEEE}, pp.~1034--1042, April 2013.
+
+\bibitem{xue13votetrust}
+J.~Xue, Z.~Yang, X.~Yang, X.~Wang, L.~Chen, and Y.~Dai, ``Votetrust: Leveraging
+  friend invitation graph to defend against social network sybils.,'' in {\em
+  INFOCOM}, pp.~2400--2408, IEEE, 2013.
+
+\bibitem{cao12sybilrank}
+Q.~Cao, M.~Sirivianos, X.~Yang, and T.~Pregueiro, ``Aiding the detection of
+  fake accounts in large scale social online services,'' in {\em Presented as
+  part of the 9th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 12)}, (San Jose, CA), pp.~197--210, USENIX, 2012.
+
+\bibitem{boshmaf15integro}
+Y.~Boshmaf, D.~Logothetis, G.~Siganos, J.~Leria, J.~Lorenzo, M.~Ripeanu, and
+  K.~Beznosov, ``Integro: Leveraging victim prediction for robust fake account
+  detection in osns,'' Mar 2015.
+
+\bibitem{yu09dsybil}
+H.~Yu, C.~Shi, M.~Kaminsky, P.~B. Gibbons, and F.~Xiao, ``Dsybil: Optimal
+  sybil-resistance for recommendation systems,'' in {\em 2009 30th IEEE
+  Symposium on Security and Privacy}, pp.~283--298, May 2009.
+
+\bibitem{Zheng_thwartingsybil}
+C.~Zheng and D.~S. Gilbert, ``Thwarting sybil attacks and malicious disruption
+  in wireless networks,” http://www.comp.nus.edu.sg.''
+
+\bibitem{Demirbas06RSSI}
+M.~Demirbas and Y.~Song, ``An rssi-based scheme for sybil attack detection in
+  wireless sensor networks,'' in {\em World of Wireless, Mobile and Multimedia
+  Networks, 2006. WoWMoM 2006. International Symposium on a}, pp.~5 pp.--570,
+  2006.
+
+\bibitem{yang11sybilwild}
+Z.~Yang, C.~Wilson, X.~Wang, T.~Gao, B.~Y. Zhao, and Y.~Dai, ``Uncovering
+  social network sybils in the wild,'' in {\em Proceedings of the 2011 ACM
+  SIGCOMM Conference on Internet Measurement Conference}, IMC '11, (New York,
+  NY, USA), pp.~259--268, ACM, 2011.
 
 \end{thebibliography}

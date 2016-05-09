@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.31)  6 MAY 2016 17:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 MAY 2016 23:12
 entering extended mode
-**"C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/survey/sybil_attack_l
-atex/xu16sybil.tex"
-
-("C:/Users/k586j642/Google Drive/wsu.2016.spring/CS898AB/survey/sybil_attack_la
-tex/xu16sybil.tex"
-LaTeX2e <2015/10/01> patch level 2
-Babel <3.9n> and hyphenation patterns for 69 languages loaded.
-(IEEEtran.cls
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**xu16sybil.tex
+(./xu16sybil.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -20,9 +20,7 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
 
-
-("C:\Users\k586j642\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.f
-d"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -116,52 +114,55 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (xu16sybil.aux)
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks15
+\thm@bodyfont=\toks16
+\thm@headfont=\toks17
+\thm@notefont=\toks18
+\thm@headpunct=\toks19
+\thm@preskip=\skip44
+\thm@postskip=\skip45
+\thm@headsep=\skip46
+\dth@everypar=\toks20
+)
+\c@assumption=\count94
+
+(./xu16sybil.aux)
 \openout1 = `xu16sybil.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
 
 -- Lines per column: 56 (exact).
-
-LaTeX Warning: Reference `Conclusion' on page 1 undefined on input line 421.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 448.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 448.
-[1{C:/Users/k586j642/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 457.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 457.
+
 [2] [3]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
+ [4] [5] [6] (./xu16sybil.bbl [7]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-(xu16sybil.bbl [4])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -173,36 +174,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5
-
-] (xu16sybil.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[8] (./xu16sybil.aux) ) 
 Here is how much of TeX's memory you used:
- 1070 strings out of 493634
- 19712 string characters out of 3134015
- 82334 words of memory out of 3000000
- 4520 multiletter control sequences out of 15000+200000
- 35250 words of font info for 64 fonts, out of 3000000 for 9000
- 1028 hyphenation exceptions out of 8191
- 26i,7n,19p,1089b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname
-/8r.enc}<C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/k586j642/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/k586j642/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/k
-586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
-/utmb8a.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/ur
-w/times/utmbi8a.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/urw/times/utmr8a.pfb><C:/Users/k586j642/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on xu16sybil.pdf (5 pages, 126179 bytes).
+ 1187 strings out of 493089
+ 20915 string characters out of 6134842
+ 87553 words of memory out of 5000000
+ 4733 multiletter control sequences out of 15000+600000
+ 35250 words of font info for 64 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 26i,7n,19p,1707b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base
+/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on xu16sybil.pdf (8 pages, 146085 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
